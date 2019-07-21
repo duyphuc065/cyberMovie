@@ -1,0 +1,81 @@
+ <!-- header -->
+ <header class="header">
+    <!-- menu desktop -->
+    <nav class="fixed-top menu-des d-none d-lg-block">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="" class="col logo"><img src="assets/img/icon/web-logo.png" alt="logo"></a>
+                <ul class="col m-0 row justifi-content-beetwen category">
+                    <li><a href="">Lịch chiếu</a></li>
+                    <li><a href="">Cụm rạp</a></li>
+                    <li><a href="">Tin tức</a></li>
+                    <li><a href="">Ứng dụng</a></li>
+                </ul>
+                <div class="col row justify-content-end right m-0">
+                    <div class="login">
+                        <a href=""><img src="assets/img/avatar.png" alt="avatar" class="imgLogin">
+                            Đăng nhập
+                        </a>
+                    </div>
+                    <div class="line "></div>
+                    <div class="dropdown">
+                        <img src="assets/img/icon/location-header.png" class="pr-3" alt="location-header">
+                        <div class="header__location dropdownList dropdown-toggle" id="dropdownMenu1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Hồ Chí Minh
+                            <span class="caret pl-2"><img src="assets/img/icon/dropdown-icon.png" alt=""></span>
+                        </div>
+                        <ul class="dropdown-menu scroll" aria-labelledby="dropdownMenu1">
+                            <li><a class="dropdown-item" href="#" data-value="Hồ Chí Minh">Hồ Chí Minh</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Hà Nội">Hà Nội </a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Đà Nẵng">Đà Nẵng</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Hải Phòng">Hải Phòng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- menu mobile -->
+    <nav class="fixed-top menu-mob d-block d-lg-none">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="" class="col logo">
+                    <img src="assets/img/icon/web-logo.png" alt="web-logo">
+                </a>
+                <div class="col row justify-content-end right ">
+                    <div class="menu-options">
+                        <a href="javascript:void(0)" id="open-menu" onclick="openMenu()">
+                            <img src="assets/img/icon/menu-options.png" alt="menu-options">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mySidenav">
+        <div class="wrap-menu">
+            <ul class="login-mob row">
+                <li class="col-auto wrap-login">
+                    <a href=""><img src="assets/img/avatar.png" alt="avatar" class="imgLoginMo">
+                        Đăng nhập
+                    </a>
+                </li>
+                <li class="col menu-close">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                        <img src="assets/img/icon/next-session.png" class="imgClose" alt="imgLogin">
+                    </a>
+                </li>
+                <li class="col-12 category-mob ">
+                    <a href="">Lịch chiếu</a>
+                    <a href="">Cụm rạp</a>
+                    <a href="">Tin tức</a>
+                    <a href="">Ứng dụng</a>
+                    <a href="">Hồ Chí Minh</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</header>
+<!-- header end -->

@@ -1,0 +1,25 @@
+.app{
+    padding: 120px 0 80px 0;
+    background: url("../../../img/icon/backapp.jpg");
+    background-size: contain;
+    color:$color-white-0;
+    margin-top:100px;
+    .text-title{
+        font-size:32px;
+    }
+    .text-content{
+        font-size:16px;
+    }
+    .text-download{
+        font-size:14px;
+    }
+    .btn-download{
+        background-color: $color-red-0;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        border: none;
+        border-radius: 4px;    
+    }
+}

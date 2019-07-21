@@ -1,0 +1,138 @@
+.listCinema {
+  .listCinemaBg {
+    padding: 120px 0 ;
+    background: url(../../../img/icon/back-news.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    .listCinema__nav {
+      width: 90px;
+      border: 1px solid #ebebec;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      .nav-link {
+        padding: 20px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: calc(100% - 40px);
+          transform: translateX(-50%);
+          border-bottom: 1px solid #fff;
+          border-color: rgba(238, 238, 238, 0.88);
+        }
+      }
+    }
+    #listCinema__content {
+      margin-left: -5px;
+      height: 362px;
+      border-top: 1px solid #ebebec;
+      border-bottom: 1px solid #ebebec;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .tab-pane {
+        .listCinema__item {
+          padding: 20px 0 20px 20px;
+          position: relative;
+          display: flex;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+          .wrap-info {
+            padding-left: 10px;
+            .nameCinema {
+              @include text($color-black-0, $fs-2, 400);
+            }
+            .addressCinema {
+              @include text($color-black-1, $fs-0, 400);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: calc(100% - 40px);
+            transform: translateX(-50%);
+            border-bottom: 1px solid #fff;
+            border-color: rgba(238, 238, 238, 0.88);
+          }
+        }
+      }
+    }
+    #listCinema__movie {
+      border: 1px solid #ebebec;
+      height: 362px;
+      padding: 15px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .wrapMovie {
+        position: relative;
+        padding:20px 0;
+        .movieInfo {
+          display: flex;
+          img {
+            width: 50px;
+            height: 50px;
+          }
+          .wrapInfo {
+            padding-top: 5px;
+            padding-left: 10px;
+            display: block;
+            .nameMovie {
+              @include text($color-black-0, $fs-2, 600);
+              display: block;
+            }
+            .timeMovie {
+              @include text($color-black-1, $fs-0, 400);
+              display: block;
+            }
+          }
+        }
+        .listTime {
+          padding-top: 15px;
+          display: flex;
+          img {
+            margin-right: 35px;
+            margin-top: 7px;
+            width: 30px;
+            height: 26px;
+          }
+          .sessons {
+            .time {
+              font-size: 22px;
+              font-weight: 500;
+              color: #417500;
+              margin: 0 5px 5px 0;
+              transition: all 0.2s;
+              &:hover{
+                color:$color-red-0;
+              }
+            }
+            
+          }
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: calc(100% - 40px);
+          transform: translateX(-50%);
+          border-bottom: 1px solid #fff;
+          border-color: rgba(238, 238, 238, 0.88);
+        }
+      }
+      
+    }
+  }
+}

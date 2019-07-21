@@ -1,0 +1,198 @@
+.header {
+
+    .menu-des {
+        padding: 5px 10px;
+        box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, .95);
+       &:hover{
+           background-color: $color-white-0;
+       }
+
+        .logo {
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .category {
+            list-style: none;
+            align-self: center;
+            text-decoration: none;
+
+            li {
+                display: inline-block;
+                margin-right: 20px;
+
+                a {
+                    font-size: $fs-2;
+                    color: $color-black-0;
+
+                    &:hover {
+                        color: $color-red-0;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .right {
+            align-self: center;
+
+            .login {
+                a {
+                    color: $color-black-2;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    .imgLogin {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+
+
+            .dropdown {
+                padding: 4px 0;
+
+                img {
+                    opacity: 0.5;
+                }
+
+                .dropdownList {
+                    color: $color-black-2 !important;
+                }
+
+                .dropdown-menu {
+                    &.show {
+                        top: 20px !important;
+                        left: -16px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    //mobile
+    .menu-mob {
+        padding: 5px 15px 5px 0;
+        box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, .95);
+        z-index: 2;
+
+        .logo {
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .right {
+            align-self: center;
+
+            img {
+                width: 25px;
+            }
+        }
+    }
+
+    #mySidenav {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        overflow: hidden;
+        transition: 0.5s;
+        pointer-events: none;
+
+        .wrap-menu {
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100%;
+            background-color: white;
+            transition: all 0.4s;
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+
+            .login-mob {
+                position: relative;
+                padding: 10px 20px;
+                list-style-type: none;
+
+                .wrap-login {
+                    text-decoration: none;
+
+                    a {
+                        color: $color-black-0;
+                        font-size: $fs-2;
+
+                        &:hover {
+                            color: $color-red-0;
+                        }
+
+                        .imgLoginMo {
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 50%;
+                            margin-right: 15px;
+                        }
+                    }
+                }
+
+                a:hover {
+                    text-decoration: none;
+
+                }
+
+                .menu-close {
+                    .imgClose {
+                        position: absolute;
+                        top: 9px;
+                        right: 5px;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+
+                .category-mob {
+                    a {
+                        display: block;
+                        padding: 20px 0;
+                        font-size: $fs-4;
+                        color: $color-black-0;
+
+                    }
+                }
+            }
+        }
+
+        &.active {
+            background-color: rgba(0, 0, 0, .8);
+            pointer-events: inherit;
+
+            .wrap-menu {
+                right: 0;
+            }
+        }
+
+    }
+
+
+
+    @media (max-width: 768px) and (min-width: 736px) {
+        .category {
+            display: none;
+        }
+    }
+}

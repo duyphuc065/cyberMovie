@@ -1,0 +1,126 @@
+.banner {
+    margin-top: 60px;
+    position: relative;
+
+    .carousel {
+        .carousel-item {
+            position: relative;
+
+            .carousel__background {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, #000, transparent 20%);
+                top: 0;
+            }
+
+            .carousel__video {
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.2s;
+
+            }
+
+            &:hover {
+                .carousel__video {
+                    opacity: 1;
+                }
+            }
+        }
+
+        //next
+        .carousel-control-next-icon {
+            background-image: url(../../../img/icon/next-session.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        //prev
+        .carousel-control-prev-icon {
+            background-image: url(../../../img/icon/back-session.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        //dot
+        .carousel-indicators {
+            bottom: 10%;
+
+            li {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+
+                &.active {
+                    background-color: $color-red-0;
+                }
+            }
+        }
+    }
+
+    .banner__tools {
+        position: absolute;
+        height: 80px;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 40%);
+        z-index: 9;
+        background-color: $color-white-0;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 950px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+
+        .dropdown {
+            font-size: $fs-2;
+            top: 22px;
+            border-right: 1px solid rgba(155, 155, 155, .2);
+
+
+            .dropdownList {
+                padding: 13px 0;
+                white-space: nowrap;
+                width: 260px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                .caret {
+                    position: absolute;
+                    right: 10px;
+                }
+                &.theater{
+                    width: 100px;
+                }
+            }
+
+            .dropdown-menu {
+                .date-book {
+                    font-size: $fs-2;
+                    display: block;
+                }
+
+                .time-book {
+                    font-size: $fs-0;
+                    color: $color-black-2;
+                }
+            }
+
+        }
+
+        .btn-book {
+            background-color: $color-black-4;
+            border: none;
+            text-transform: uppercase;
+            border-radius: 4px;
+            padding: 13px 19px;
+            font-size: $fs-2;
+            color: $color-white-0;
+            margin-top: 20px
+        }
+    }
+}

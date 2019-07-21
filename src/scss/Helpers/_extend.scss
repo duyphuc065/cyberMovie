@@ -1,0 +1,43 @@
+.line {
+    height: 30px;
+    border-right: 1px solid $color-black-2;
+    margin: 0 10px;
+    opacity: 0.2;
+}
+.dropdown {   
+    cursor: pointer; 
+    .dropdownList {
+        display: inline-block;
+        &.dropdown-toggle {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    .dropdown-menu {
+        &.show {
+            max-height: 100px;
+            overflow-y: scroll;
+        }
+        .dropdown-item {
+            color: $color-black-0;
+
+            &:hover {
+                background-color: $color-blue-0;
+                color:$color-white-0;
+            }
+        }
+    }
+}
+a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+ul{
+    list-style: none;
+    li{
+        list-style: none
+    }
+}

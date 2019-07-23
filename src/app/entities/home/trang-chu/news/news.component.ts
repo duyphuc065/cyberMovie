@@ -12,7 +12,7 @@ export class NewsComponent implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    console.log(324);
+   // console.log(324);
     var gadgetCarousel = $(".sliders");
 
     gadgetCarousel.each(function() {
@@ -99,5 +99,9 @@ export class NewsComponent implements OnInit {
         $(this).slick();
       }
     });
+    $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
+      $(".slick-soon").slick("setPosition");
+    });
+    
   }
 }

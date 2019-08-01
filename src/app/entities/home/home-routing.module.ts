@@ -9,6 +9,10 @@ const routes: Routes = [
           path:"",
           loadChildren:"./trang-chu/trang-chu.module#TrangChuModule"
         },
+        {
+          path:"test",
+          loadChildren:"./test/test.module#TestModule"
+        },
       ]
   },  
     

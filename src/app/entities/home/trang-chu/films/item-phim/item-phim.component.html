@@ -1,0 +1,39 @@
+<div class="card">
+    <a class="card-hover" href="#">
+        <div class="card-image">
+            <img class="card-img-top img-fluid" [src]="movie.hinhAnh" alt="Card image">
+            <div class="card-age">
+                C13
+            </div>
+            <div class="card-idmb">
+                <div class="card-point">{{movie.danhGia}}</div>
+                <div class="card-star">
+                    <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                    <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                    <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                    <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                    <img src="assets/img/icon/star1.2.png" class="star-half" alt="star1.2">
+                </div>
+            </div>
+            <div class="card-background"></div>
+
+        </div>
+        <div class="card-body">
+            <div class="card-info">
+                <h4 class="card-title">{{movie.tenPhim}}
+                </h4>
+                <p class="card-text">129 phút - {{movie.danhGia}} IMDb</p>
+            </div>
+        </div>
+    </a>
+    <div class="card-button">
+        <button class="btn btn-card" (click)="chiTietPhim()">MUA VÉ</button>
+    </div>
+    <div class="card-video">
+        <a href="{{movie.trailer}}" data-lity>
+            <div class="card-play text-center">
+                <img src="assets/img/icon/play-video.png" alt="play-video">
+            </div>
+        </a>
+    </div>
+</div>

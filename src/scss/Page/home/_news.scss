@@ -18,7 +18,6 @@
 
   .news__content {
     margin: 20px 0;
-    height:154px;
 
     &:hover {
       .news__content-title {
@@ -51,8 +50,10 @@
   }
 
   .news__description {
+    
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    /* autoprefixer: ignore next */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;

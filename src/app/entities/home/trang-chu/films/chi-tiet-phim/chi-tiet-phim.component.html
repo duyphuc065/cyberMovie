@@ -1,0 +1,315 @@
+<section class="movie">
+        <!-- destop -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 p-0 movie__image">
+                    <img src="https://s3img.vcdn.vn/123phim/2019/07/vua-su-tu-the-lion-king-15633583739500.jpg"
+                        class="img-fluid" alt="">
+                    <div class="movie__button">
+                        <a href="{{movie.trailer}}" data-lity>
+                            <div class="movie__video text-center">
+                                <img src="assets/img/icon/play-video.png" alt="play-video">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="movie__bg"></div>
+                    <div class="card-idmb">
+                        <div class="card-point">{{movie.danhGia}}</div>
+                        <div class="card-star">
+                            <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                            <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                            <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                            <img src="assets/img/icon/star1.png" class="star-all" alt="star1">
+                            <img src="assets/img/icon/star1.2.png" class="star-half" alt="star1.2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 movie__text">
+                    <p>19.07.2019</p>
+                    <p class="movie__title">{{movie.tenPhim}}</p>
+                    <p>118 phút - 6.4 IMDb - 2D/Digital/3D/IMAX/4DX</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 movie__tab">
+                        <ul class="nav movie__nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#showing">Lịch chiếu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#info">Thông tin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#comment">Đánh giá</a>
+                            </li>
+                        </ul>
+    
+                        <div class="tab-content movie__content">
+                            <div id="showing" class="tab-pane fade in active show">
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                                    aria-expanded="true" aria-controls="collapseOne" class="tab-image">
+                                                    <img src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png"
+                                                        class="img-fluid" alt="">
+                                                    <p>BHD Star Cineplex</p>
+                                                </a>
+                                            </h4>
+    
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in show" role="tabpanel"
+                                            aria-labelledby="headingOne">
+                                            <div class="panel-body tab-body">
+                                                <div class="wrapMovie">
+                                                    <div class="movieInfo">
+                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-vincom-3-2-15379527367766.jpg"
+                                                            alt="">
+                                                        <div class="wrapInfo">
+                                                            <span class="nameMovie">BHD Star Cineplex - 3/2
+                                                            </span>
+                                                            <span class="timeMovie">L5-Vincom 3/2, 3C Đường 3/2, Q.10
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="listTime">
+                                                        <img src="assets/img/icon/type/2_0.png" alt="">
+                                                        <div class="sessons">
+                                                            <a href="" class="time">10:50</a>
+                                                            <a href="" class="time">11:50</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="wrapMovie">
+                                                    <div class="movieInfo">
+                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
+                                                            alt="">
+                                                        <div class="wrapInfo">
+                                                            <span class="nameMovie">BHD Star Cineplex - Bitexco
+                                                            </span>
+                                                            <span class="timeMovie">L3-Bitexco Icon 68, 2 Hải Triều, Q.1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="listTime">
+                                                        <img src="assets/img/icon/type/2_0.png" alt="">
+                                                        <div class="sessons">
+                                                            <a href="" class="time">10:50</a>
+                                                            <a href="" class="time">11:50</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed tab-image" data-toggle="collapse"
+                                                    data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                                    aria-controls="collapseTwo">
+                                                    <img src="https://s3img.vcdn.vn/123phim/2018/09/e520781386bd5436e94d6e15e193a005.png"
+                                                        class="img-fluid" alt="">
+                                                    <p>Galaxy Cinema</p>
+                                                </a>
+                                            </h4>
+    
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                            aria-labelledby="headingTwo">
+                                            <div class="panel-body tab-body">Anim pariatur cliche reprehenderit, enim
+                                                eiusmod
+                                                high life accusamus terry richardson ad squid.</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed tab-image" data-toggle="collapse"
+                                                    data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                                                    aria-controls="collapseThree">
+                                                    <img src="https://s3img.vcdn.vn/123phim/2018/09/1721cfa98768f300c03792e25ceb0191.png"
+                                                        class="img-fluid" alt="">
+                                                    <p>CineStar</p>
+                                                </a>
+                                            </h4>
+    
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                            aria-labelledby="headingThree">
+                                            <div class="panel-body tab-body">Anim pariatur cliche reprehenderit, enim
+                                                eiusmod
+                                                high life accusamus terry richardson ad squid. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="info" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row text">
+                                            <p>Ngày phát hành</p>
+                                            <span>19.07.2019</span>
+                                        </div>
+                                        <div class="row text">
+                                            <p>Đạo diễn</p>
+                                            <span>Jon Favreau</span>
+                                        </div>
+                                        <div class="row text">
+                                            <p>Diễn viên</p>
+                                            <span>Donald Glover, Beyoncé Knowles, Chiwetel Ejiofor, Seth RogenDonald
+                                                Glover, Beyoncé Knowles, Chiwetel Ejiofor, Seth Rogen</span>
+                                        </div>
+                                        <div class="row text">
+                                            <p>Thể Loại</p>
+                                            <span>hoạt hình, phiêu lưu</span>
+                                        </div>
+                                        <div class="row text">
+                                            <p>Định dạng</p>
+                                            <span>2D/Digital/3D/IMAX/4DX</span>
+                                        </div>
+                                        <div class="row text">
+                                            <p>Quốc Gia SX</p>
+                                            <span>Mỹ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row text">
+                                            <p>Nội dung</p>
+                                            <span>{{movie.moTa}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="comment" class="tab-pane fade ">
+                                <div class="col-md-12 wrapComment">
+                                    <input type="text" data-toggle="modal" data-target="#myModal" class="inputComment"
+                                        placeholder="Bạn nghĩ gì về phim này ?" />
+                                    <span class="imgComment">
+                                        <img src="assets/img/avatar.png" class="img-fluid" alt="">
+                                    </span>
+                                    <span class="starComment">
+                                        <img src="assets/img/icon/listStar.png" class="img-fluid" alt="">
+                                    </span>
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <div class="wrapReview">
+                                        <div class="reviewInfo">
+                                            <div class="reviewAvatar">
+                                                <img src="assets/img/avatar.png" class="img-fluid" alt="">
+                                                <div class="reviewTime">
+                                                    <p class="reviewName">Ahihi</p>
+                                                    <p>11:00</p>
+                                                </div>
+                                            </div>
+                                            <div class="reviewRating">
+                                                <p>10</p>
+                                                <div class="reviewStar">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.2.png" class="img-fluid starHalf" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reviewContent">
+                                            <p>Phim hay</p>
+                                        </div>
+                                    </div>
+                                    <div class="wrapReview">
+                                        <div class="reviewInfo">
+                                            <div class="reviewAvatar">
+                                                <img src="assets/img/avatar.png" class="img-fluid" alt="">
+                                                <div class="reviewTime">
+                                                    <p class="reviewName">Ahihi</p>
+                                                    <p>11:00</p>
+                                                </div>
+                                            </div>
+                                            <div class="reviewRating">
+                                                <p>10</p>
+                                                <div class="reviewStar">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.png" class="img-fluid star" alt="">
+                                                    <img src="assets/img/icon/star1.2.png" class="img-fluid starHalf" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reviewContent">
+                                            <p>Phim hay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+    
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <div id="rating">
+                            <input type="radio" id="star5" name="rating" value="5" />
+                            <label class="full" for="star5" title="Awesome - 5 stars"></label>
+    
+                            <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                            <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+    
+                            <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                            <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label class="full" for="star3" title="Meh - 3 stars"></label>
+    
+                            <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                            <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+    
+                            <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                            <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+    
+                            <input type="radio" id="starhalf" name="rating" value="half" />
+                            <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                       <div class="container">
+                           <div class="row">
+                               <div class="col-md-12">
+                                   <textarea autofocus class="commentText" rows="2" placeholder="Nói cho mọi người biết bạn nghĩ gì về phim này..."></textarea>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success">Gửi</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    

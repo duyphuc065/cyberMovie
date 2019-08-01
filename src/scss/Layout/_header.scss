@@ -42,7 +42,7 @@
             .login {
                 a {
                     color: $color-black-2;
-
+                    cursor: pointer;
                     &:hover {
                         text-decoration: none;
                     }

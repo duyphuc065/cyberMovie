@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DataService } from 'src/app/shares/services/data.service';
 
 @Component({
   selector: 'app-list-cinema',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-cinema.component.scss']
 })
 export class ListCinemaComponent implements OnInit {
-
-  constructor() { }
+  heThongRap:any =[];
+  subListRap = new Subscription();
+  constructor(
+    private dataService:DataService
+  ) { }
 
   ngOnInit() {
+    this.layHeThongRap();
   }
-
+  layHeThongRap(){
+    const uri="QuanLyRap/LayThongTinHeThongRap";
+    this.subListRap=this.dataService.get(uri).subscribe((data)=>{
+      this.heThongRap=data;
+      console.log(data);
+    })
+  }
+  ngOnDestroy() {
+    this.subListRap.unsubscribe();
+  }
 }

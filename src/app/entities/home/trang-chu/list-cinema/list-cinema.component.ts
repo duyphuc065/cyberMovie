@@ -8,7 +8,7 @@ import { DataService } from 'src/app/shares/services/data.service';
   styleUrls: ['./list-cinema.component.scss']
 })
 export class ListCinemaComponent implements OnInit {
-  heThongRap:any =[];
+  heThongRap:any;
   subListRap = new Subscription();
   constructor(
     private dataService:DataService

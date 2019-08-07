@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cum-rap',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cum-rap.component.scss']
 })
 export class CumRapComponent implements OnInit {
-
+@Input() rap;
   constructor() { }
 
   ngOnInit() {

@@ -22,92 +22,28 @@ function closeNav() {
   var menu = document.getElementById("mySidenav");
   menu.classList.remove("active");
 }
-//slick
-$(document).ready(function($) {
-  var gadgetCarousel = $(".sliders");
+//countdown
+// function startTimer(duration, display) {
+//   var timer = duration, minutes, seconds;
+//   setInterval(function () {
+//       minutes = parseInt(timer / 60, 10)
+//       seconds = parseInt(timer % 60, 10);
 
-  gadgetCarousel.each(function() {
-    if ($(this).is(".slick-film")) {
-      $(this).slick({
-        prevArrow: '<img class="left-arrow" src="assets/img/icon/back-session.png">',
-        nextArrow:
-          '<img class="right-arrow" src="assets/img/icon/next-session.png">',
-        infinite: true,
-        speed: 300,
-        slidesPerRow: 4,
-        rows: 2,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesPerRow: 3,
-              rows: 2,
-              infinite: true
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesPerRow: 2,
-              rows: 2,
-              infinite: true,
-              arrows: false,
-              dot: false
-            }
-          }
-        ]
-      });
-    } else if ($(this).is(".slick-soon")) {
-      $(this).slick({
-        prevArrow: '<img class="left-arrow" src="assets/img/icon/back-session.png">',
-        nextArrow:
-          '<img class="right-arrow" src="assets/img/icon/next-session.png">',
-        infinite: true,
-        speed: 300,
-        slidesPerRow: 4,
-        rows: 2,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesPerRow: 3,
-              rows: 2,
-              infinite: true
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesPerRow: 2,
-              rows: 2,
-              infinite: true,
-              arrows: false,
-              dot: false
-            }
-          }
-        ]
-      });
-    } else if ($(this).is(".slick-news")) {
-      $(this).slick({
-        prevArrow: '<img class="left-arrow" src="assets/img/icon/back-session.png">',
-        nextArrow:
-          '<img class="right-arrow" src="assets/img/icon/next-session.png">',
-        centerMode: true,
-        variableWidth: true,
-        focusOnSelect: true,
-        slidesToShow: 3,
-        responsive: [
-          {
-            breakpoint: 600,
-            arrows: false
-          }
-        ]
-      });
-    } else {
-      $(this).slick();
-    }
-  });
-});
-$('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-  $(".slick-soon").slick("setPosition");
-});
+//       minutes = minutes < 10 ? "0" + minutes : minutes;
+//       seconds = seconds < 10 ? "0" + seconds : seconds;
+
+//       display.textContent = minutes + ":" + seconds;
+
+//       if (--timer < 0) {
+//         document.getElementById("time").innerHTML = "TIME UP";     
+//       }
+//   }, 1000);
+  
+// }
+
+// window.onload = function () {
+  
+//   var fiveMinutes = 60 * 5,
+//       display = document.querySelector('#time');
+//   startTimer(fiveMinutes, display);
+// }

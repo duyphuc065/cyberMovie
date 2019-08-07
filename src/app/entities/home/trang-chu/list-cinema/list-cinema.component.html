@@ -4,85 +4,36 @@
             <div class="row">
                 <div class="col-1">
                     <div class="nav flex-column listCinema__nav"  role="tablist">
-                        <app-rap></app-rap>
+                        <!-- <app-rap *ngFor="let item of heThongRap" [rap]="item"></app-rap> -->
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                            role="tab">
+                            <img src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png"
+                                alt="">
+                        </a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                            role="tab">
+                            <img src="https://s3img.vcdn.vn/123phim/2018/09/e520781386bd5436e94d6e15e193a005.png"
+                                alt="">
+                        </a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+                            role="tab">
+                            <img src="https://s3img.vcdn.vn/123phim/2018/09/1721cfa98768f300c03792e25ceb0191.png"
+                                alt="">
+                        </a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+                            role="tab">
+                            <img src="https://s3img.vcdn.vn/123phim/2018/09/9b240f96a233bb43203ee514a21a6004.png"
+                                alt="">
+                        </a>
                     </div>
                 </div>
                 <div class="col-11">
                     <div class="row">
                         <div class="col-md-5 pr-0">
                             <div class="tab-content scroll" id="listCinema__content">
-                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">
-                                   
-                                    <!-- home -->
-                                    <ul class="nav flex-column" id="myTab" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active " id="home-tab" data-toggle="tab" href="#home">
-                                                <div class="listCinema__item">
-                                                    <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
-                                                        alt="">
-                                                    <div class="wrap-info">
-                                                        <span class="nameCinema">
-                                                            BHD Star Cineplex - Bitexco
-                                                        </span>
-                                                        <span class="addressCinema">
-                                                            L3-Bitexco Icon 68, 2 Hải Triều, Q.1
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile">
-                                                <div class="listCinema__item">
-                                                    <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
-                                                        alt="">
-                                                    <div class="wrap-info">
-                                                        <span class="nameCinema">
-                                                            BHD Star Cineplex - Bitexco
-                                                        </span>
-                                                        <span class="addressCinema">
-                                                            L3-Bitexco Icon 68, 2 Hải Triều, Q.1
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages">
-                                                <div class="listCinema__item">
-                                                    <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
-                                                        alt="">
-                                                    <div class="wrap-info">
-                                                        <span class="nameCinema">
-                                                            BHD Star Cineplex - Bitexco
-                                                        </span>
-                                                        <span class="addressCinema">
-                                                            L3-Bitexco Icon 68, 2 Hải Triều, Q.1
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings">
-                                                <div class="listCinema__item">
-                                                    <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
-                                                        alt="">
-                                                    <div class="wrap-info">
-                                                        <span class="nameCinema">
-                                                            BHD Star Cineplex - Bitexco
-                                                        </span>
-                                                        <span class="addressCinema">
-                                                            L3-Bitexco Icon 68, 2 Hải Triều, Q.1
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                               <!-- <app-cum-rap *ngFor="let item of heThongRap" [rap]="item"></app-cum-rap> -->
                                 <!-- profile -->
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel">
+                                <!-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel">
                                     <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link active" id="home-tab" data-toggle="tab"
@@ -101,7 +52,98 @@
                                                 href="#settings2">Settings2</a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
+                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">
+                                   
+                                        <!-- tab1 -->
+                                        <ul class="nav flex-column" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active " id="home-tab" data-toggle="tab" href="#home">
+                                                    <div class="listCinema__item">
+                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
+                                                            alt="">
+                                                        <div class="wrap-info">
+                                                            <span class="nameCinema">
+                                                                BHD Star Cineplex - Bitexco
+                                                            </span>
+                                                            <span class="addressCinema">
+                                                                L3-Bitexco Icon 68, 2 Hải Triều, Q.1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile">
+                                                    <div class="listCinema__item">
+                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
+                                                            alt="">
+                                                        <div class="wrap-info">
+                                                            <span class="nameCinema">
+                                                                BHD Star Cineplex - Bitexco
+                                                            </span>
+                                                            <span class="addressCinema">
+                                                                L3-Bitexco Icon 68, 2 Hải Triều, Q.1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages">
+                                                    <div class="listCinema__item">
+                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
+                                                            alt="">
+                                                        <div class="wrap-info">
+                                                            <span class="nameCinema">
+                                                                BHD Star Cineplex - Bitexco
+                                                            </span>
+                                                            <span class="addressCinema">
+                                                                L3-Bitexco Icon 68, 2 Hải Triều, Q.1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings">
+                                                    <div class="listCinema__item">
+                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/bhd-star-bitexco-15379552241200.jpg"
+                                                            alt="">
+                                                        <div class="wrap-info">
+                                                            <span class="nameCinema">
+                                                                BHD Star Cineplex - Bitexco
+                                                            </span>
+                                                            <span class="addressCinema">
+                                                                L3-Bitexco Icon 68, 2 Hải Triều, Q.1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- tab2 -->
+                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel">
+                                        <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab"
+                                                    href="#home2">Home2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab"
+                                                    href="#profile2">Profile2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="messages-tab" data-toggle="tab"
+                                                    href="#messages2">Messages2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="settings-tab" data-toggle="tab"
+                                                    href="#settings2">Settings2</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                             </div>
                         </div>
                         <div class="col-md-7 pl-0">
@@ -118,7 +160,7 @@
                                             </div>
                                         </div>
                                         <div class="listTime">
-                                            <img src="./img/icon/type/2_0.png" alt="">
+                                            <img src="assets/img/icon/type/2_0.png" alt="">
                                             <div class="sessons">
                                                 <a href="" class="time">10:50</a>
                                                 <a href="" class="time">11:50</a>
@@ -135,7 +177,7 @@
                                             </div>
                                         </div>
                                         <div class="listTime">
-                                            <img src="./img/icon/type/2_0.png" alt="">
+                                            <img src="assets/img/icon/type/2_0.png" alt="">
                                             <div class="sessons">
                                                 <a href="" class="time">10:50</a>
                                                 <a href="" class="time">11:50</a>

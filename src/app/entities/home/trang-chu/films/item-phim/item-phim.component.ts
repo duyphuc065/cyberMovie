@@ -17,13 +17,7 @@ export class ItemPhimComponent implements OnInit {
   }
   chiTietPhim(){
     this.router.navigate([
-      "/chi-tiet-phim", this.movie.maPhim],
-      {
-        queryParams:
-        {
-          tenPhim:this.movie.tenPhim,
-        }
-      }
+      "/chi-tiet-phim", this.movie.maPhim]
     );
   }
 }

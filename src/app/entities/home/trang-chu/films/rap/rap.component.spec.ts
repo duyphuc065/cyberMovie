@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DangNhapComponent } from './dang-nhap.component';
+import { RapComponent } from './rap.component';
 
-describe('DangNhapComponent', () => {
-  let component: DangNhapComponent;
-  let fixture: ComponentFixture<DangNhapComponent>;
+describe('RapComponent', () => {
+  let component: RapComponent;
+  let fixture: ComponentFixture<RapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DangNhapComponent ]
+      declarations: [ RapComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DangNhapComponent);
+    fixture = TestBed.createComponent(RapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

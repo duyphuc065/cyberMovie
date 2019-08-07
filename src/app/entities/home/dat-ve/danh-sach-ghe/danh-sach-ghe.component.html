@@ -1,0 +1,6 @@
+<div class="seatItem text-center">
+        <ng-container *ngFor="let item of mangGhe; let index = index">
+    <app-item-ghe [ghe]="item" (eventGhe)="chonGhe($event)"></app-item-ghe>
+    <br *ngIf="(index + 1) % 6 === 0">
+</ng-container>
+</div>

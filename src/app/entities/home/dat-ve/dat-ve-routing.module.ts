@@ -1,13 +1,16 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { DangKyComponent } from './dang-ky.component';
+import { DatVeComponent } from './dat-ve.component';
 
 const routes: Routes = [
-  { path: "", component: DangKyComponent },
+  {
+    path: "",
+    component: DatVeComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DangKyRoutingModule {}
+export class DatVeRoutingModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
-import { DataService } from "src/app/shares/services/data.service";
+import { DataService } from "src/app/commons/share/services/data.service";
 import { Subscription } from "rxjs";
 import $ from 'jquery';
 declare var $:any;

@@ -7,7 +7,7 @@ export class ShareDataService {
   private seatSelected = new BehaviorSubject({} as object);
   shareSeatSelected = this.seatSelected.asObservable();
 
-  private movieColelctions = new BehaviorSubject({} as any);
+  private movieColelctions = new BehaviorSubject([] as any);
   shareMovieCollections = this.movieColelctions.asObservable();
 
   private detailMovie = new BehaviorSubject({} as any);

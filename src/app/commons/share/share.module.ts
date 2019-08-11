@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ModalsComponent } from 'src/app/shares/components/modals/modals.component';
-import { MaterialModule } from 'src/app/shares/material/material.module';
+import { ModalsComponent } from 'src/app/commons/share/components/modals/modals.component';
+import { MaterialModule } from 'src/app/commons/share/material/material.module';
 
 @NgModule({
   declarations: [ModalsComponent],

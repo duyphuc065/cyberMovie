@@ -11,7 +11,13 @@ import { NewsModule } from './news/news.module';
 @NgModule({
   declarations: [TrangChuComponent],
   imports: [
-    CommonModule,TrangChuRoutingModule,BannerModule,DownloadModule,FilmsModule,ListCinemaModule,NewsModule
+    CommonModule,
+     TrangChuRoutingModule, 
+     BannerModule, 
+     DownloadModule, 
+     FilmsModule, 
+     ListCinemaModule, 
+     NewsModule
   ]
 })
 export class TrangChuModule { }

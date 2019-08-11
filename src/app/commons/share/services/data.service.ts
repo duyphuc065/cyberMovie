@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { tap, catchError } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 
-let urlAPI = "";
+let urlAPI = ``;
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,12 +21,10 @@ export class DataService {
   }
 
   get(uri: string): Observable<any> {
+    const restPath  = urlAPI+`/`+uri;
     return this.http.get(urlAPI + "/" + uri).pipe(
       tap(
-        () => {
-          //Thành công
-          //Xử lý loading
-        },
+        () => {},
         catchError(err => {
           return this.handleErr(err);
         })

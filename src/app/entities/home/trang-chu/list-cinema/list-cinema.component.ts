@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DataService } from 'src/app/shares/services/data.service';
+import { DataService } from 'src/app/commons/share/services/data.service';
 
 @Component({
   selector: 'app-list-cinema',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "src/app/shares/services/data.service";
-import { UserService } from 'src/app/shares/services/user.service';
+import { DataService } from "src/app/commons/share/services/data.service";
+import { UserService } from 'src/app/commons/share/services/user.service';
 
 @Component({
   selector: "app-dang-nhap",

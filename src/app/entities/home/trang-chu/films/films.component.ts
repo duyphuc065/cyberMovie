@@ -20,10 +20,10 @@ export class FilmsComponent implements OnInit,AfterViewInit {
     this.layDanhSachPhim();
   } 
   layDanhSachPhim() {
-    const uri = "QuanLyPhim/LayDanhSachPhim?MaNhom=GP05";
+    const uri = "QuanLyPhim/LayDanhSachPhim?MaNhom=GP01";
     this.subListPhim = this.dataService.get(uri).subscribe((data: any) => {
-      console.log(data);
       this.danhSachPhim = data;
+
     });
   }
   ngOnDestroy() {

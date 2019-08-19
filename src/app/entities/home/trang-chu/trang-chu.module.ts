@@ -12,11 +12,11 @@ import { NewsModule } from './news/news.module';
   declarations: [TrangChuComponent],
   imports: [
     CommonModule,
-     TrangChuRoutingModule, 
-     BannerModule, 
-     DownloadModule, 
-     FilmsModule, 
-     ListCinemaModule, 
+    BannerModule, 
+    DownloadModule, 
+    FilmsModule, 
+    ListCinemaModule, 
+    TrangChuRoutingModule, 
      NewsModule
   ]
 })

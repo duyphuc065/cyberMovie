@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { MaterialModule } from './commons/share/material/material.module';
 import { EntitiesModule } from './entities/entities.module';
+import { BannerComponent } from './entities/home/trang-chu/banner/banner.component';
 
 
 

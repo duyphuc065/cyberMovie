@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [
-    { path:"",component:HomeComponent,
+    { 
+      path:"",
+      component:HomeComponent,
       children:[
         {
           path:"",
@@ -16,7 +18,7 @@ const routes: Routes = [
         {
           path:"dat-ve",
           loadChildren:"./dat-ve/dat-ve.module#DatVeModule"
-        },
+        }        
       ]
   },  
     

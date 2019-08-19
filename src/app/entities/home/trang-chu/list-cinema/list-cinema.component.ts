@@ -21,7 +21,6 @@ export class ListCinemaComponent implements OnInit {
     const uri="QuanLyRap/LayThongTinHeThongRap";
     this.subListRap=this.dataService.get(uri).subscribe((data)=>{
       this.heThongRap=data;
-      console.log(data);
     })
   }
   ngOnDestroy() {

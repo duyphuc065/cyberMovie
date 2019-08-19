@@ -1,11 +1,13 @@
-module Utils {
-  export function isSIGN_UP(message) {
+import { MESSAGE } from "../message/Message";
+
+export module Utils {
+export const isSIGN_UP = (message) => {
     switch (message) {
-      case MESSAGE.DATA.ACCOUNT_ALREADY_EXISTS:
+      case MESSAGE.ACCOUNT_ALREADY_EXISTS:
         return false;
-      case MESSAGE.DATA.EMAIL_ALREADY_EXISTS:
+      case MESSAGE.EMAIL_ALREADY_EXISTS:
         return false;
-      case MESSAGE.DATA.GROUPID_NOT_MATCH_RULE:
+      case MESSAGE.GROUPID_NOT_MATCH_RULE:
         return false;
       default:
         return true;

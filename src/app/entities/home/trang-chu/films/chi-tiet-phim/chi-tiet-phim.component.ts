@@ -29,21 +29,18 @@ export class ChiTietPhimComponent implements OnInit {
     this.id=this.activatedRoute.snapshot.paramMap.get("id");
     this.activatedRoute.queryParams.subscribe((params:any)=>{
       this.tenPhim=params.tenPhim;
-      console.log(this.tenPhim);
     })
   }
   chiTietPhim(){
     const uri=`QuanLyPhim/LayThongTinPhim?MaPhim=${this.id}`;
     this.subChiTietPhim=this.dataService.get(uri).subscribe((data:any)=>{      
       this.movie=data;
-      console.log(this.movie);
     })
   }
   thongtinRap(){
     const uri=`QuanLyRap/LayThongTinHeThongRap`;
     this.subChiTietPhim=this.dataService.get(uri).subscribe((data:any)=>{      
       this.rap=data;
-      console.log(this.rap);
     })
   }
   ngOnDestroy(){

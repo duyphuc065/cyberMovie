@@ -14,7 +14,9 @@ import { MaterialModule } from './commons/share/material/material.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,BrowserAnimationsModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

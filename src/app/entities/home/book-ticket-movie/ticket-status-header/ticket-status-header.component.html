@@ -1,0 +1,43 @@
+<div id="stepcheckout" style="width: 78%;" ng-controller="CheckoutStepController" ng-include="" src="'app/checkout/step/step.html'" class="ng-scope">
+	<div class="leftstep ng-scope">
+		<!-- ngIf: pCinemaId!=16 --><ul ng-if="pCinemaId!=16" class="ng-scope">
+			<!-- ngIf: step==1 -->
+			<!-- ngIf: step>1 && step <=3 --><li ng-if="step>1 &amp;&amp; step <=3" ng-click="prePage()" style="cursor: pointer" class="ng-binding ng-scope"><span class="stepnumber">01</span> CHỌN LOẠI VÉ</li><!-- end ngIf: step>1 && step <=3 -->
+			<!-- ngIf: step==4 -->
+			<li ng-class="{'opacity' : step==4}" class="ng-binding active"><span class="stepnumber">02</span> CHỌN GHẾ &amp; THANH TOÁN</li>
+			<li ng-class="{'active' : step==4}" class="ng-binding"><span class="stepnumber">03</span> KẾT QUẢ ĐẶT VÉ</li>
+		</ul><!-- end ngIf: pCinemaId!=16 -->
+		<!-- ngIf: pCinemaId==16 -->
+	</div>
+	<!-- ngIf: !isRedirectOuterPage --><div class="rightstep ng-scope" ng-if="!isRedirectOuterPage">
+		<div id="account" class="imgCircle" ng-class="{'isLoggedIn': isLoggedIn}">
+			<!-- ngIf: !isLoggedIn --><a href="#" class="menu titleDisplay ng-scope" ng-if="!isLoggedIn" ng-click="goToLogin()">
+				<img class="btnLogin" src="app/assets/img/avatar.png">
+				Đăng Nhập
+			</a><!-- end ngIf: !isLoggedIn -->
+			<!-- ngIf: isLoggedIn -->
+			<!-- ngIf: user.user_id -->
+		</div>
+	</div><!-- end ngIf: !isRedirectOuterPage -->
+
+	<!-- reponsive	mobile -->
+	<!-- ngIf: (step==1 && !loadingticket) || (step>1 && !loadingticket && (!loadingseat || pCinemaId==1)) || (step==4 && !waitingCheckout) --><div class="leftmobile ng-scope" ng-if="(step==1 &amp;&amp; !loadingticket) || (step>1 &amp;&amp; !loadingticket &amp;&amp; (!loadingseat || pCinemaId==1)) || (step==4 &amp;&amp; !waitingCheckout)">
+		<div>
+			<!-- ngIf: !isRedirectOuterPage --><img class="backMobile ng-scope" src="app/assets/img/icons/cancel-arrow.png" ng-click="prePage()" ng-if="!isRedirectOuterPage"><!-- end ngIf: !isRedirectOuterPage -->
+			<!-- ngIf: pCinemaId==4 && isRedirectOuterPage -->
+		</div>
+	</div><!-- end ngIf: (step==1 && !loadingticket) || (step>1 && !loadingticket && (!loadingseat || pCinemaId==1)) || (step==4 && !waitingCheckout) -->
+	<div class="centermobile ng-scope">
+		<!-- ngIf: step==1 -->
+		<!-- ngIf: step==2 -->
+		<!-- ngIf: step==3 --><span ng-if="step==3" class="steptitle ng-scope">03. THANH TOÁN</span><!-- end ngIf: step==3 -->
+		<!-- ngIf: step==4 -->
+	</div>
+	<!-- ngIf: !isRedirectOuterPage --><div class="rightmobile menudropdown ng-scope" ng-if="!isRedirectOuterPage">
+		<div id="account" class="imgCircle" ng-class="{isLoggedIn: user.user_id}" ng-click="ShowMenu()">
+			<!-- ngIf: !user.user_id --><img ng-if="!user.user_id" ng-click="goToLogin()" src="app/assets/img/avatar.png" class="ng-scope"><!-- end ngIf: !user.user_id -->
+			<!-- ngIf: user.user_id -->
+			<!-- ngIf: user.user_id && !justLoginIn -->
+		</div>
+	</div><!-- end ngIf: !isRedirectOuterPage -->	
+</div>

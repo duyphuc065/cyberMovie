@@ -32,7 +32,7 @@ export class DataService {
     );
   }
 
-  post(uri: string, data?: object): Observable<any> {
+  post(uri: string, data?: Object): Observable<any> {
     return this.http.post(urlAPI + "/" + uri, data, httpOptions).pipe(
       tap(
         () => {},

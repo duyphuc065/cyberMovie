@@ -5,7 +5,13 @@ import { TrangChuComponent } from "./trang-chu.component";
 const routes: Routes = [
   {
     path: "",
-    component: TrangChuComponent
+    component: TrangChuComponent,
+    children:[
+      {
+        path: "booking-ticket",
+        loadChildren: "./trang-chu/banner/banner.module#BannerModule"
+      }
+    ]
   }
 ];
 

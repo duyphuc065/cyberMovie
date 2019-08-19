@@ -20,11 +20,11 @@ export class MovieManagementService {
   getMovies() {
     const uri = `QuanLyPhim/LayDanhSachPhim`;
     this.subcription = this.dataService.get(uri)
-    .subscribe((data: any) => {
-      this.movieCollections = data;
-      this.shareDataService.sharingDataMovieCollections(data);
-    });
-
+      .subscribe((data: any) => {
+        // console.table(data);
+        this.movieCollections = data;
+        this.shareDataService.sharingDataMovieCollections(data);
+      });
   }
 
 

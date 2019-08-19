@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "src/app/commons/share/services/data.service";
 import { UserService } from 'src/app/commons/share/services/user.service';
+import { MESSAGE } from 'src/app/commons/message/Message';
 
 @Component({
   selector: "app-dang-nhap",
@@ -25,12 +26,13 @@ export class DangNhapComponent implements OnInit {
     //   });
 
 
-    const uri = `QuanLyNguoiDung/DangNhap?taiKhoan=${
-      loginForm.taiKhoan
-    }&matKhau=${loginForm.matKhau}`;
-    this.dataService.post(uri).subscribe((data: any) => {
-      console.log(data);
-      if (data === "Tài khoản hoặc mật khẩu không đúng !") {
+    const uri = `QuanLyNguoiDung/DangNhap`;
+    const account={
+      taiKhoan: loginForm.taiKhoan,
+      matKhau: loginForm.matKhau
+    }
+    this.dataService.post(uri,JSON.stringify(account)).subscribe((data: any) => {
+      if (data === MESSAGE.SIGNIN_FAIL) {
         alert(data);
       } else {
         alert("Đăng nhập thành công");

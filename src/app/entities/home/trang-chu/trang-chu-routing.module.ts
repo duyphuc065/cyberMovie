@@ -9,7 +9,7 @@ const routes: Routes = [
     children:[
       {
         path: "booking-ticket",
-        loadChildren: "./trang-chu/banner/banner.module#BannerModule"
+        loadChildren: "./banner/banner.module#BannerModule"
       }
     ]
   }

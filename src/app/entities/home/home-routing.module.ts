@@ -8,12 +8,12 @@ const routes: Routes = [
       component:HomeComponent,
       children:[
         {
-          path:"",
+          path:"trang-chu",
           loadChildren:"./trang-chu/trang-chu.module#TrangChuModule"
         },
         {
           path:"test",
-          loadChildren:"./test/test.module#TestModule"
+          loadChildren: "./test/test.module#TestModule"
         },
         {
           path:"dat-ve",

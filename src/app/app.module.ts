@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { MaterialModule } from './commons/share/material/material.module';
+import { EntitiesModule } from './entities/entities.module';
 
 
 
@@ -15,6 +16,7 @@ import { MaterialModule } from './commons/share/material/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    EntitiesModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],

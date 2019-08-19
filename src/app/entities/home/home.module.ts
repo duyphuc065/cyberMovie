@@ -6,16 +6,18 @@ import { HeaderModule } from 'src/app/layout/header/header.module';
 import { FooterModule } from 'src/app/layout/footer/footer.module';
 import { BookTicketMovieComponent } from './book-ticket-movie/book-ticket-movie.component';
 import { BookTicketMovieModule } from './book-ticket-movie/book-ticket-movie.module';
+import { TrangChuModule } from './trang-chu/trang-chu.module';
 
 
 @NgModule({
   declarations: [HomeComponent],
   imports: [
     CommonModule, 
-    HomeRoutingModule,
     HeaderModule,
     FooterModule,
-    BookTicketMovieModule
+    BookTicketMovieModule,
+    HomeRoutingModule,
+    TrangChuModule
   ]
 })
 export class HomeModule { }

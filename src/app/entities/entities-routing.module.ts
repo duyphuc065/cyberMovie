@@ -9,9 +9,9 @@ const routes: Routes = [
     children: [
       //Trang Home
       {
-        path: "",
+        path: "home",
         loadChildren: "./home/home.module#HomeModule"
-      },
+      }
     //   //Trang Admin
     //   {
     //     path: "admin",

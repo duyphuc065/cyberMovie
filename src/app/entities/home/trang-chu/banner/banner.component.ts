@@ -143,7 +143,7 @@ export class BannerComponent implements OnInit {
   }
   navigateToSeatType(){
     console.log("booking-ticket-movie");
-    this.router.navigate(['/entities/home/trang-chu/banner/booking-ticket-movie/booking-type']);
+    this.router.navigate(['booking-type']);
   }
   ngOnDestroy() {
     this.subcription.unsubscribe();

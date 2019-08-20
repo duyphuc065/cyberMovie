@@ -1,18 +1,10 @@
 <!-- banner start -->
 <section class="banner d-none d-lg-block">
   <!--Carousel Wrapper-->
-  <div
-    id="carousel-example-1z"
-    class="carousel slide carousel-fade"
-    data-ride="carousel"
-  >
+  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
     <!--Indicators-->
     <ol class="carousel-indicators">
-      <li
-        data-target="#carousel-example-1z"
-        data-slide-to="0"
-        class="active"
-      ></li>
+      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-1z" data-slide-to="1"></li>
       <li data-target="#carousel-example-1z" data-slide-to="2"></li>
     </ol>
@@ -22,11 +14,8 @@
       <!--First slide-->
       <div class="carousel-item active">
         <a href="#">
-          <img
-            class="d-block w-100"
-            src="https://s3img.vcdn.vn/123phim/2019/07/nhen-15622966541398.jpg"
-            alt="First slide"
-          />
+          <img class="d-block w-100" src="https://s3img.vcdn.vn/123phim/2019/07/nhen-15622966541398.jpg"
+            alt="First slide" />
           <div class="carousel__background"></div>
           <a href="https://www.youtube.com/watch?v=DYYtuKyMtY8" data-lity>
             <div class="carousel__video text-center">
@@ -39,11 +28,8 @@
       <!--Second slide-->
       <div class="carousel-item">
         <a href="#">
-          <img
-            class="d-block w-100"
-            src="https://s3img.vcdn.vn/123phim/2019/07/beo-15622967404800.jpg"
-            alt="Second slide"
-          />
+          <img class="d-block w-100" src="https://s3img.vcdn.vn/123phim/2019/07/beo-15622967404800.jpg"
+            alt="Second slide" />
           <div class="carousel__background"></div>
           <a href="https://www.youtube.com/watch?v=3BX_x7OnSmg" data-lity>
             <div class="carousel__video text-center">
@@ -56,11 +42,8 @@
       <!--Third slide-->
       <div class="carousel-item">
         <a href="#">
-          <img
-            class="d-block w-100"
-            src="https://s3img.vcdn.vn/123phim/2019/06/para-15611033899645.jpg"
-            alt="Third slide"
-          />
+          <img class="d-block w-100" src="https://s3img.vcdn.vn/123phim/2019/06/para-15611033899645.jpg"
+            alt="Third slide" />
           <div class="carousel__background"></div>
           <a href="https://www.youtube.com/watch?v=o3ESQWArU2w" data-lity>
             <div class="carousel__video text-center">
@@ -73,21 +56,11 @@
     </div>
     <!--/.Slides-->
     <!--Controls-->
-    <a
-      class="carousel-control-prev"
-      href="#carousel-example-1z"
-      role="button"
-      data-slide="prev"
-    >
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a
-      class="carousel-control-next"
-      href="#carousel-example-1z"
-      role="button"
-      data-slide="next"
-    >
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -96,136 +69,80 @@
   <!--/.Carousel Wrapper-->
   <!-- select film -->
   <div class="banner__tools d-none d-lg-block">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
           <div class="dropdown">
-            <div
-              class="dropdownList dropdown-toggle"
-              id="dropdownTool1"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              (click)="getMoviesCollections()"
-              aria-expanded="!isCollapsed"
-            >
+            <div class="dropdownList dropdown-toggle" id="dropdownTool1" data-toggle="dropdown" aria-haspopup="true" (click)="getMoviesCollections()" aria-expanded="!isCollapsed">
               {{ defaultName.movieName }}
-              <ng-container
-                *ngIf="MOVIECOLLECTIONS.length != 0; else defaultMovieTemplate"
-              >
+              <ng-container *ngIf="MOVIECOLLECTIONS.length != 0; else defaultMovieTemplate">
                 <ul class="dropdown-menu " aria-labelledby="dropdownTool1">
-                  <li
-                    *ngFor="let item of MOVIECOLLECTIONS; let stt = index"
-                    class="scrollbar"
-                    id="style-3"
-                  >
-                    <a class="dropdown-item" (click)="chooseMovie(item)"
-                      >{{ item.tenPhim }}
+                  <li *ngFor="let item of MOVIECOLLECTIONS; let stt = index" class="scrollbar" id="style-3">
+                    <a class="dropdown-item" (click)="chooseMovie(item)">{{ item.tenPhim }}
                     </a>
                   </li>
                 </ul>
               </ng-container>
-              <span class="caret pl-2"
-                ><img src="assets/img/icon/dropdown-icon.png" alt=""
-              /></span>
+              <span class="caret pl-2"><img src="assets/img/icon/dropdown-icon.png" alt="" /></span>
             </div>
           </div>
         </div>
         <div class="col-md-2">
           <div class="dropdown">
-            <div
-              class="dropdownList theater dropdown-toggle"
-              id="dropdownTool2"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="true"
-            >
+            <div class="dropdownList theater dropdown-toggle" id="dropdownTool2" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="true">
               {{ defaultName.cinemaName }}
-              <span class="caret pl-2"
-                ><img src="assets/img/icon/dropdown-icon.png" alt=""
-              /></span>
+              <span class="caret pl-2"><img src="assets/img/icon/dropdown-icon.png" alt="" /></span>
             </div>
-
-            <ul
-              *ngIf="MOVIECOLLECTIONS.length > 0"
-              class="dropdown-menu"
-              aria-labelledby="dropdownTool2"
-            >
-              <li *ngFor="let cinema of CINEMACOLLECTIONS">
-                <a class="dropdown-item" (click)="chooseCinema(cinema)">{{
-                  cinema.tenHeThongRap
-                }}</a>
-              </li>
-            </ul>
+            <div>
+              <div *ngIf="MOVIECOLLECTIONS.length > 0" class="dropdown-menu" aria-labelledby="dropdownTool2">
+                <ng-container  *ngFor="let cinema of CINEMACOLLECTIONS">
+                  <a class="dropdown-item" (click)="chooseCinema(cinema)">{{  cinema.tenHeThongRap  }}</a>
+                </ng-container>
+              </div>
+            </div>
+           
           </div>
         </div>
         <div class="col-md-2">
           <div class="dropdown">
-            <div
-              class="dropdownList dropdown-toggle"
-              id="dropdownTool3"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="true"
-            >
+            <div class="dropdownList dropdown-toggle" id="dropdownTool3" data-toggle="dropdown" ria-haspopup="true"  aria-expanded="true">
               {{ defaultName.ngayXem }}
-
-              <span class="caret pl-2"
-                ><img src="assets/img/icon/dropdown-icon.png" alt=""
-              /></span>
+              <span class="caret pl-2"><img src="assets/img/icon/dropdown-icon.png" alt="" /></span>
             </div>
-
-            <ul class="dropdown-menu" aria-labelledby="dropdownTool3">
-              <!-- <li><a class="dropdown-item">Vui lòng chọn phim và rạp</a></li> -->
-              <li *ngFor="let date of SHOWTIMESCOLLECTIONS">
-                <a class="dropdown-item" (click)="setDate(date)">
-                  {{ date.date }}
-                </a>
-              </li>
-            </ul>
+            <div class="dropdown-menu" aria-labelledby="dropdownTool3">
+              <ng-container  *ngFor="let date of SHOWTIMESCOLLECTIONS">
+                <a class="dropdown-item" (click)="setDate(date)">  {{ date.date }}  </a>
+              </ng-container >
+            </div>
           </div>
         </div>
-        <div class="col-md-2-auto">
+        <div class="col-md-2">
           <div class="dropdown">
-            <div
-              class="dropdownList dropdown-toggle"
-              id="dropdownTool4"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="true"
-            >
+            <div class="dropdownList dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true"  aria-expanded="true">
               {{ defaultName.suatChieu }}
               <span class="caret pl-2">
                 <img src="assets/img/icon/dropdown-icon.png" alt="" />
               </span>
             </div>
-
-            <ul class="dropdown-menu" aria-labelledby="dropdownTool4">
-              <li *ngFor="let item of DATECOLLECTIONS">
+            <div class="dropdown-menu">
+              <ng-container *ngFor="let item of DATECOLLECTIONS">
                 <a class="dropdown-item" (click)="setTime(item)">{{ item }}</a>
-              </li>
-            </ul>
+              </ng-container>
+            </div>
           </div>
-          <div class="col-md-2-auto">
+          <div  class="col-md-2-auto">
             <ng-container *ngIf="enableButton(); else greyButton">
-              <button
-              class="btn btn-book "
-                 style="background-color: red"
-                 (click)="navigateToSeatType()" >
-                  Mua vé ngay
-              </button>
+              <button class="btn btn-book " style="background-color: red" (click)="navigateToSeatType()">  Mua vé ngay  </button>
             </ng-container>
             <ng-template #greyButton>
-              <button class="btn btn-book ">
-                Mua vé ngay
-              </button>
+              <button class="btn btn-book ">Mua vé ngay</button>
             </ng-template>
-          </div>
+          </div >
         </div>
-        <div></div>
+      
       </div>
     </div>
   </div>
 </section>
 <!-- banner end -->
-
 <!-- <router-outlet></router-outlet> -->

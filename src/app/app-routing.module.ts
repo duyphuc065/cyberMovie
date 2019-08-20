@@ -5,17 +5,13 @@ const routes: Routes = [
     // Trang Home
     { 
       path: "", 
-      redirectTo: "/entities/home/trang-chu/banner", 
+      redirectTo: "banner", 
       pathMatch: "full" 
     },
    { 
     path:"entities", 
     loadChildren:"./entities/entities.module#EntitiesModule"
    },
-  //  { 
-  //   path:"booking-ticket", 
-  //   loadChildren:"./entities/home/trang-chu/banner/banner.module#BannerModule"
-  //  },
 ];
 
 @NgModule({

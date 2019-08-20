@@ -6,24 +6,25 @@ import { BookingTicketTypeComponent } from './booking-ticket-type/booking-ticket
 const routes: Routes = [
   {
     path: "",
-    component: BookTicketMovieComponent,
-    // redirectTo: 'booking-type',
-    // pathMatch: 'full'
-    children: [
-      {
-        path: "booking-type",
-        component: BookingTicketTypeComponent
-        // loadChildren: './booking-ticket-type/booking-ticket-type.module#BookingTicketTypeModule'
+    // component: BookTicketMovieComponent,
+    redirectTo: 'booking-type',
+    pathMatch: 'full'
+    // children: [
+    //   {
+    //     path: "booking-type",
+    //     component: BookingTicketTypeComponent
+    //     // loadChildren: './booking-ticket-type/booking-ticket-type.module#BookingTicketTypeModule'
         
-      }
-    ]
+    //   }
+    // ]
   },
-  // {
-  //       path: "booking-type",
-  //       // component: BookingTicketTypeComponent
-  //       loadChildren: './booking-ticket-type/booking-ticket-type.module#BookingTicketTypeModule'
-        
-  //     }
+  {
+    path: "booking-type",
+    component: BookingTicketTypeComponent
+    // loadChildren: './booking-ticket-type/booking-ticket-type.module#BookingTicketTypeModule'
+    
+  }
+  
 ];
 
 @NgModule({

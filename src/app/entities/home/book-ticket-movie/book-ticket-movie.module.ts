@@ -8,10 +8,10 @@ import { BookingTicketTypeComponent } from './booking-ticket-type/booking-ticket
 
 @NgModule({
   declarations: [
-    BookTicketMovieComponent,
     BookingSeatsComponent,
+    TicketStatusHeaderComponent,
     BookingTicketTypeComponent,
-    TicketStatusHeaderComponent
+    BookTicketMovieComponent
   ],
   imports: [
     CommonModule,

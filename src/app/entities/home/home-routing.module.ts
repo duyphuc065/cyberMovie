@@ -12,10 +12,6 @@ const routes: Routes = [
           loadChildren:"./trang-chu/trang-chu.module#TrangChuModule"
         },
         {
-          path:"test",
-          loadChildren: "./test/test.module#TestModule"
-        },
-        {
           path:"dat-ve",
           loadChildren:"./dat-ve/dat-ve.module#DatVeModule"
         }        

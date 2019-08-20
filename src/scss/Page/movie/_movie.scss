@@ -8,7 +8,7 @@
       no-repeat;
     background-size: cover;
     .movie__row {
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0, 0, 0, 0.8);
       .movie__image {
         position: relative;
         text-align: center;
@@ -19,40 +19,29 @@
         .movie__video {
           @include absolute(50%, 50%, -50%, -50%);
           z-index: 5;
-        }        
-      }
-      .card-idmb {
-        display: inline-block;
-        font-size: 16px;
-        background-color: rgba(12, 27, 54, 0.8);
-        border: 1px solid #1f2e46;
-        border-radius: 4px;
-        padding: 2px;
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        color: $color-white-0;
-        width: 100px;
-        height: 100px;
-        text-align: center;
-        transform: translate(-50%, -50%);
-
-        .card-point {
-          font-size: 40px;
         }
+      }
+      .card-right {
+        position: relative;
+        .card-idmb {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          text-align: center;
+          transform: translate(-50%, 64%);
+          .card-star {
+            display: inline-flex;
 
-        .card-star {
-          display: inline-flex;
+            img {
+              display: inline-block;
 
-          img {
-            display: inline-block;
+              &.star-all {
+                max-width: 25px;
+              }
 
-            &.star-all {
-              max-width: 15px;
-            }
-
-            &.star-half {
-              max-width: 15px;
+              &.star-half {
+                max-width: 25px;
+              }
             }
           }
         }
@@ -61,7 +50,7 @@
         .movie__text {
           color: $color-white-0;
           text-align: center;
-          padding-top:160px;
+          padding-top: 160px;
           .movie__title {
             font-size: $fs-6;
           }
@@ -96,21 +85,26 @@
     }
     .movie__content {
       #showing {
-        .movie__date{
+        .movie__date {
           overflow: auto;
           padding: 15px 0px;
           text-align: center;
           white-space: nowrap;
-          .listDate{
+          .listDate {
             cursor: pointer;
             padding: 0 36px;
             display: inline-block;
             text-align: center;
             color: #000;
-            a{
+            a {
+              p {
+                margin: 0;
+                @include text($color-black-0, $fs-3, 700);
+              }
+            }
+            &:hover{
               p{
-                margin:0;
-                @include text($color-black-0,$fs-3,700);
+                @include text($color-red-0, $fs-3, 700);
               }
             }
           }

@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./chi-tiet-phim.component.scss']
 })
 export class ChiTietPhimComponent implements OnInit {
+  
   id:any;
   tenPhim:any;
   movie:any;

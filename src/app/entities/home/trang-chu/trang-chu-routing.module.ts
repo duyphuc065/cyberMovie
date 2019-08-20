@@ -8,7 +8,7 @@ const routes: Routes = [
     component: TrangChuComponent,
     children:[
       {
-        path: "booking-ticket",
+        path: "banner",
         loadChildren: "./banner/banner.module#BannerModule"
       }
     ]

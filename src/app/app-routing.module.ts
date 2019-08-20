@@ -5,7 +5,7 @@ const routes: Routes = [
     // Trang Home
     { 
       path: "", 
-      redirectTo: "/entities/home/trang-chu/booking-ticket", 
+      redirectTo: "/entities/home/trang-chu/banner", 
       pathMatch: "full" 
     },
    { 

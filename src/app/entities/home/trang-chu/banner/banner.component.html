@@ -168,6 +168,7 @@
               aria-expanded="true"
             >
               {{ defaultName.ngayXem }}
+
               <span class="caret pl-2"
                 ><img src="assets/img/icon/dropdown-icon.png" alt=""
               /></span>
@@ -183,17 +184,18 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2-auto">
           <div class="dropdown">
             <div
               class="dropdownList dropdown-toggle"
               id="dropdownTool4"
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="true" >
+              aria-expanded="true"
+            >
               {{ defaultName.suatChieu }}
               <span class="caret pl-2">
-                <img src="assets/img/icon/dropdown-icon.png" alt=""/>
+                <img src="assets/img/icon/dropdown-icon.png" alt="" />
               </span>
             </div>
 
@@ -203,20 +205,23 @@
               </li>
             </ul>
           </div>
-        </div>
-        <div class="col-md-2-auto">
-          <ng-container *ngIf="enableButton(); else greyButton">
-            <button class="btn btn-book " style="background-color: red">
-              Mua vé ngay
-            </button>
-          </ng-container>
-          <ng-template #greyButton>
-              <button class="btn btn-book ">
+          <div class="col-md-2-auto">
+            <ng-container *ngIf="enableButton(); else greyButton">
+              <button
+              class="btn btn-book "
+                 style="background-color: red"
+                 (click)="navigateToSeatType()" >
                   Mua vé ngay
-                </button>
-          </ng-template>
-          
+              </button>
+            </ng-container>
+            <ng-template #greyButton>
+              <button class="btn btn-book ">
+                Mua vé ngay
+              </button>
+            </ng-template>
+          </div>
         </div>
+        <div></div>
       </div>
     </div>
   </div>
@@ -224,4 +229,3 @@
 <!-- banner end -->
 
 <!-- <router-outlet></router-outlet> -->
-

@@ -1,5 +1,6 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { MovieManagementService } from 'src/app/commons/share/services/movie-management.service';
+import {Router, ActivatedRoute} from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/commons/share/services/data.service';
 import { ShareDataService } from 'src/app/commons/share/share-data.service';
@@ -7,7 +8,8 @@ import {
   MOVIE_LABEL_DEFAULT, 
   CINEMA_LABEL_DEFAULT,
   NGAYCHIEU_LABEL_DEFAULT, 
-  TIME_LABEL_DEFAULT 
+  TIME_LABEL_DEFAULT, 
+  DISABLE_BUTTON
 } from 'src/app/commons/message/CommonName';
 
 @Component({
@@ -28,10 +30,13 @@ export class BannerComponent implements OnInit {
   ngayXem: NGAYCHIEU_LABEL_DEFAULT,
   suatChieu: TIME_LABEL_DEFAULT
   }
+  buttonTemplate: any  =  DISABLE_BUTTON;
   constructor(
     private movieManagementService: MovieManagementService,
     private dataService: DataService,
-    private shareDataService: ShareDataService
+    private shareDataService: ShareDataService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -49,7 +54,6 @@ export class BannerComponent implements OnInit {
   }
 
   getCinePlexCollections(maPhim) {
-    console.log(maPhim);
     this.CINEMACOLLECTIONS = [];
     const uri = `QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`;
     this.dataService.get(uri).subscribe(response => {
@@ -81,6 +85,8 @@ export class BannerComponent implements OnInit {
   chooseMovie(item) {
     this.defaultName.movieName = item.tenPhim;
     this.defaultName.cinemaName = CINEMA_LABEL_DEFAULT;
+    this.defaultName.ngayXem=NGAYCHIEU_LABEL_DEFAULT;
+    this.defaultName.suatChieu=TIME_LABEL_DEFAULT;
     this.getCinePlexCollections(item.maPhim);
 
   }
@@ -125,20 +131,19 @@ export class BannerComponent implements OnInit {
     this.DATECOLLECTIONS = this.SHOWTIMESCOLLECTIONS.find(item=>{
       return item.date===date.date;
     }).time;
-    console.log(this.DATECOLLECTIONS);
   }
   setTime(item){
     this.defaultName.suatChieu = item;
   }
   enableButton(){
-    if(this.defaultName.movieName!=MOVIE_LABEL_DEFAULT
+    return this.defaultName.movieName!=MOVIE_LABEL_DEFAULT
       && this.defaultName.cinemaName!=CINEMA_LABEL_DEFAULT
       && this.defaultName.ngayXem!=NGAYCHIEU_LABEL_DEFAULT
-      && this.defaultName.suatChieu!=TIME_LABEL_DEFAULT
-      ){
-        return true;
-      }
-      return false;
+      && this.defaultName.suatChieu!=TIME_LABEL_DEFAULT;
+  }
+  navigateToSeatType(){
+    console.log("booking-ticket-movie");
+    this.router.navigate(['/entities/home/trang-chu/banner/booking-ticket-movie/booking-type']);
   }
   ngOnDestroy() {
     this.subcription.unsubscribe();

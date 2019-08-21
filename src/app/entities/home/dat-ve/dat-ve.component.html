@@ -8,18 +8,20 @@
                             <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
                         </div>
                         <div class="seatContent">
-                            <p class="name">CineStar - 3/2</p>
-                            <p>Hôm nay - 23:30 - Rạp 7</p>
+                            <p class="name">{{lichChieu.tenCumRap}}</p>
+                            <p>{{lichChieu.tenRap}}</p>
                         </div>
                     </div>
                     <div class="seatRight">
                         <p>Thời gian giữ ghế</p>
-                        <p class="date" id="time">05:00</p>
+                        <p class="date" id="time">
+                            <countdown [config]="{leftTime: 300}" (finished)="onFinished()">$!m!:$!s!</countdown>
+                        </p>
                     </div>
                 </div>
                 <div class="seatScreen">
                 </div>
-                <app-danh-sach-ghe></app-danh-sach-ghe>
+                <app-danh-sach-ghe (gheChonEvent)="gheChon($event)"></app-danh-sach-ghe>
                 <div class="seatType text-center">
                     <div class="seatNote">
                         <div class="seatColor available"><i class="fa fa-couch"></i></div>
@@ -35,41 +37,44 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="ticketRight">
-                    <div class="ticketTop">
-                        <div class="ticketImage">
-                            <img src="https://s3img.vcdn.vn/mobile/123phim/2019/07/dieu-ba-me-khong-ke-romang-c16-15627333506819_220x310.jpg"
-                                class="img-fluid" alt="ticket">
+            <ng-container *ngIf="listPhim">
+                <div class="col-md-4">
+                    <div class="ticketRight">
+                        <div class="ticketTop">
+                            <div class="ticketImage">
+                                <img [src]="listPhim.hinhAnh" class="img-fluid" alt="ticket">
+                            </div>
+                            <div class="ticketTitle">
+                                <p class="nameMovie">{{listPhim.tenPhim}}</p>
+                                <p>{{lichChieu.tenCumRap}}</p>
+                                <p>{{lichChieu.tenRap}}</p>
+                            </div>
                         </div>
-                        <div class="ticketTitle">
-                            <p class="nameMovie">Điều Ba Mẹ Không Kể - Romang</p>
-                            <p>BHD Star - Vincom 3/2</p>
-                            <p>Ngày mai 08/08/2019 - 20:25 - RẠP 1</p>
+                        <div class="ticketCenter">
+                            <p class="ticketChair">Ghế: <span *ngFor="let item of gheDangChon; let index=index"
+                                    class="ticketSeat">{{item.SoGhe}}</span></p>
+                            <p class="ticketPrice">{{gia | number:'1.0'}}đ</p>
                         </div>
-                    </div>
-                    <div class="ticketCenter">
-                        <p class="ticketChair">Ghế: <span *ngFor="let item of danhSachGheDangDat; let index=index"
-                                class="ticketSeat">{{item.SoGhe}}</span></p>
-                        <p class="ticketPrice">140.000đ</p>
-                    </div>
-                    <div class="ticketCombo">
-                        <div class="ticketSelect">
-                            <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
-                            </select>
+                        <div class="ticketCombo">
+                            <div class="ticketSelect">
+                                <mat-form-field>
+                                    <mat-label>COMBO</mat-label>
+                                    <mat-select (selectionChange)="selectCombo($event.value)">
+                                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                                            {{food.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="ticketPrice">{{combo |number:'1.0'}}đ</div>
                         </div>
-                        <div class="ticketPrice">140.000đ</div>
-                    </div>
-                    <div class="ticketBot">
-                        <p class="total">200.000đ</p>
-                        <button class="btn btn-book">ĐẶT VÉ</button>
+                        <div class="ticketBot">
+                            <p class="total">{{total | number:'1.0'}}đ</p>
+                            <button class="btn btn-book" (click)="datVe()">ĐẶT VÉ</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </ng-container>
         </div>
 
     </div>

@@ -18,9 +18,9 @@ export class ItemGheComponent implements OnInit {
     this.trangThaiChon = !this.trangThaiChon;
     const objGhe = {
       trangThaiChon: this.trangThaiChon,
-      ghe: this.ghe
+      ghe: this.ghe      
     };
-
+    // console.log(this.ghe);
     this.eventGhe.emit(objGhe);
   }
 }

@@ -16,7 +16,7 @@ const routes: Routes = [
           loadChildren: "./test/test.module#TestModule"
         },
         {
-          path:"dat-ve",
+          path:"dat-ve/:id",
           loadChildren:"./dat-ve/dat-ve.module#DatVeModule"
         }        
       ]

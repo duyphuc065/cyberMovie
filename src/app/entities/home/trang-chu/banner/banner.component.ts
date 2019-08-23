@@ -1,16 +1,10 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
-import { MovieManagementService } from 'src/app/commons/share/services/movie-management.service';
+import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/commons/share/services/data.service';
 import { ShareDataService } from 'src/app/commons/share/share-data.service';
-import { 
-  MOVIE_LABEL_DEFAULT, 
-  CINEMA_LABEL_DEFAULT,
-  NGAYCHIEU_LABEL_DEFAULT, 
-  TIME_LABEL_DEFAULT, 
-  DISABLE_BUTTON
-} from 'src/app/commons/message/CommonName';
+import { MOVIE_LABEL_DEFAULT, CINEMA_LABEL_DEFAULT, NGAYCHIEU_LABEL_DEFAULT, TIME_LABEL_DEFAULT, DISABLE_BUTTON } from 'src/app/commons/message/CommonName';
+import MovieInfo from 'src/app/_core/model/MovieInfo';
 
 @Component({
   selector: 'app-banner',
@@ -22,21 +16,21 @@ export class BannerComponent implements OnInit {
   CINEMACOLLECTIONS: any = []
   SHOWTIMESCOLLECTIONS:any=[];
   DATECOLLECTIONS: any = [];
-  subcription = new Subscription();
   isCollapsed: boolean = false;
   defaultName:any = {
-  movieName:MOVIE_LABEL_DEFAULT,
-  cinemaName: CINEMA_LABEL_DEFAULT,
-  ngayXem: NGAYCHIEU_LABEL_DEFAULT,
-  suatChieu: TIME_LABEL_DEFAULT
+    movieName:MOVIE_LABEL_DEFAULT,
+    cinemaName: CINEMA_LABEL_DEFAULT,
+    ngayXem: NGAYCHIEU_LABEL_DEFAULT,
+    suatChieu: TIME_LABEL_DEFAULT
   }
   buttonTemplate: any  =  DISABLE_BUTTON;
+  subcription = new Subscription();
+  movieInfo = new  MovieInfo();
   constructor(
-    private movieManagementService: MovieManagementService,
     private dataService: DataService,
     private shareDataService: ShareDataService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -49,11 +43,10 @@ export class BannerComponent implements OnInit {
     this.subcription = this.dataService.get(uri)
       .subscribe((data: any) => {
         this.MOVIECOLLECTIONS = data;
-        this.shareDataService.sharingDataMovieCollections(data);
       });
   }
 
-  getCinePlexCollections(maPhim) {
+  getCineMaCollections(maPhim) {
     this.CINEMACOLLECTIONS = [];
     const uri = `QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`;
     this.dataService.get(uri).subscribe(response => {
@@ -78,7 +71,6 @@ export class BannerComponent implements OnInit {
           });
         });
       });
-      this.shareDataService.sharingDataMovieCollections(response);
     });
   }
 
@@ -87,14 +79,19 @@ export class BannerComponent implements OnInit {
     this.defaultName.cinemaName = CINEMA_LABEL_DEFAULT;
     this.defaultName.ngayXem=NGAYCHIEU_LABEL_DEFAULT;
     this.defaultName.suatChieu=TIME_LABEL_DEFAULT;
-    this.getCinePlexCollections(item.maPhim);
+    this.getCineMaCollections(item.maPhim);
+    // push data for movieInfo Object
+    this.movieInfo.init(item);
+    
 
   }
-  chooseCinema(cineplex) {
-    this.defaultName.cinemaName = cineplex.tenHeThongRap;
+  chooseCinema(cinema) {    
+    this.defaultName.cinemaName = cinema.tenHeThongRap;
+    this.movieInfo.rapChieu = this.defaultName.cinemaName;
+
     this.defaultName.ngayXem = NGAYCHIEU_LABEL_DEFAULT;
     this.defaultName.suatChieu= TIME_LABEL_DEFAULT;
-    this.selecDateShow(cineplex.tenHeThongRap);
+    this.selecDateShow(cinema.tenHeThongRap);
   }
   selecDateShow(cinemaName){
     const data = this.CINEMACOLLECTIONS.find(item=>{
@@ -127,6 +124,8 @@ export class BannerComponent implements OnInit {
   
   setDate(date){
     this.defaultName.ngayXem = date.date;
+    this.movieInfo.ngayXem = this.defaultName.ngayXem;
+
     this.defaultName.suatChieu= TIME_LABEL_DEFAULT;
     this.DATECOLLECTIONS = this.SHOWTIMESCOLLECTIONS.find(item=>{
       return item.date===date.date;
@@ -134,16 +133,19 @@ export class BannerComponent implements OnInit {
   }
   setTime(item){
     this.defaultName.suatChieu = item;
+    this.movieInfo.suatChieu = this.defaultName.suatChieu;
+    
   }
   enableButton(){
     return this.defaultName.movieName!=MOVIE_LABEL_DEFAULT
-      && this.defaultName.cinemaName!=CINEMA_LABEL_DEFAULT
-      && this.defaultName.ngayXem!=NGAYCHIEU_LABEL_DEFAULT
-      && this.defaultName.suatChieu!=TIME_LABEL_DEFAULT;
+    && this.defaultName.cinemaName!=CINEMA_LABEL_DEFAULT
+    && this.defaultName.ngayXem!=NGAYCHIEU_LABEL_DEFAULT
+    && this.defaultName.suatChieu!=TIME_LABEL_DEFAULT;
   }
   navigateToSeatType(){
-    console.log("booking-ticket-movie");
+    this.shareDataService.sharingDataMovieDetails(this.movieInfo);
     this.router.navigate(['booking-type']);
+
   }
   ngOnDestroy() {
     this.subcription.unsubscribe();

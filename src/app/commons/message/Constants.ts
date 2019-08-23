@@ -5,3 +5,9 @@ export  const MESSAGE =  {
     EMAIL_ALREADY_EXISTS: "Email đã tồn tại!",
     GROUPID_NOT_MATCH_RULE: "Nhóm người dùng không hợp lệ!"
 }
+
+export const  FareMovie = {
+    NORMAL: 80000,
+    VIP2D: 85000,
+    COUPLE: 180000
+}

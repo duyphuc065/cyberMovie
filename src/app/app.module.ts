@@ -1,27 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from './commons/share/material/material.module';
+ 
 import { EntitiesModule } from './entities/entities.module';
-import { BannerComponent } from './entities/home/trang-chu/banner/banner.component';
-
-
-
+import { CommonModule } from '@angular/common';
+ 
 @NgModule({
   declarations: [
     AppComponent
+ 
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
-    EntitiesModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    EntitiesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

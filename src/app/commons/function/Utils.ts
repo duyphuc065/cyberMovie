@@ -1,4 +1,4 @@
-import { MESSAGE } from "../message/Message";
+import { MESSAGE } from "../message/Constants";
 
 export module Utils {
 export const isSIGN_UP = (message) => {

@@ -104,17 +104,15 @@
     "@angular-devkit/core" "8.0.6"
     rxjs "6.4.0"
 
-"@angular/animations@^8.0.3":
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-8.2.1.tgz#85e989394d8ddeac2faa3357fac97836c6c2356f"
-  integrity sha512-+E2KWj798sgby1hnC2LmK380jCZ7JLcxs5X4pM+kwJzS4T8spPTBecHRqz19C2Ea4AOSou4S1Oxs/4CCmVnj2w==
+"@angular/animations@github:angular/animations-builds":
+  version "9.0.0-next.3"
+  resolved "https://codeload.github.com/angular/animations-builds/tar.gz/048c5d57f6b4a362bcac2a6d31cda7b56aa0a3d3"
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cdk@^8.1.1":
-  version "8.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-8.1.2.tgz#6e2c2451554b0a9d752e7f5bde593be4c7d51520"
-  integrity sha512-jzPT1mMfGaA2xjnkMh1kd0uyWI7pz58/7BWBijLtSLKM9+HkhrnqXIHesKNE7EwpapzuPBtkGm3MGl661goIvA==
+"@angular/cdk@github:angular/cdk-builds":
+  version "8.1.3-ca7fff516"
+  resolved "https://codeload.github.com/angular/cdk-builds/tar.gz/a76ab4da837b392ae3eb5d7c77b9c5cf5e2748e0"
   dependencies:
     tslib "^1.7.1"
   optionalDependencies:
@@ -193,10 +191,9 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-8.0.3.tgz#25909e6a9ce5336768e489401bc9c3abb57b4304"
   integrity sha512-04XojOo9FJgEQE/rZafnaJQxPEU+//TSzTgpGoIVzCSMx+joCY/ZSSwJZPWxiHlOE57W/zX02ZY+TwcM81oTdw==
 
-"@angular/material@^8.1.2":
-  version "8.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-8.1.2.tgz#0d8b00def93e337f8bc5a6db1e94531894f17229"
-  integrity sha512-c/EYufDPTClr7F2ZFv7KSaPpA/b/Bq+89oU5/AioNzx3KIZWBB24U/GaIsh3NI75mPTeVdJDhXhCcrE5WbsZnQ==
+"@angular/material@github:angular/material2-builds":
+  version "8.1.3-ca7fff516"
+  resolved "https://codeload.github.com/angular/material2-builds/tar.gz/9d0bfb7dd4d82d82dd3ea440cae6efecb46b694f"
   dependencies:
     tslib "^1.7.1"
 
@@ -7031,6 +7028,11 @@ yargs@13.1.0:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^13.0.0"
+
+yarn@^1.17.3:
+  version "1.17.3"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.17.3.tgz#60e0b77d079eb78e753bb616f7592b51b6a9adce"
+  integrity sha512-CgA8o7nRZaQvmeF/WBx2FC7f9W/0X59T2IaLYqgMo6637wfp5mMEsM3YXoJtKUspnpmDJKl/gGFhnqS+sON7hA==
 
 yeast@0.1.2:
   version "0.1.2"

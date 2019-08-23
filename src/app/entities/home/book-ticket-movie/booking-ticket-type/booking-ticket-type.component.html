@@ -1,280 +1,35 @@
-<div id="stepcheckout" style="" ng-controller="CheckoutStepController" ng-include="" src="'app/checkout/step/step.html'" class="ng-scope">
-	<div class="leftstep ng-scope">
-		<!-- ngIf: pCinemaId!=16 --><ul ng-if="pCinemaId!=16" class="ng-scope">
-			<!-- ngIf: step==1 --><li class="active ng-binding ng-scope" ng-if="step==1"><span class="stepnumber">01</span> CHỌN LOẠI VÉ</li><!-- end ngIf: step==1 -->
-			<!-- ngIf: step>1 && step <=3 -->
-			<!-- ngIf: step==4 -->
-			<li ng-class="{'opacity' : step==4}" class="ng-binding"><span class="stepnumber">02</span> CHỌN GHẾ &amp; THANH TOÁN</li>
-			<li ng-class="{'active' : step==4}" class="ng-binding"><span class="stepnumber">03</span> KẾT QUẢ ĐẶT VÉ</li>
-		</ul><!-- end ngIf: pCinemaId!=16 -->
-		<!-- ngIf: pCinemaId==16 -->
-	</div>
-	<!-- ngIf: !isRedirectOuterPage --><div class="rightstep ng-scope" ng-if="!isRedirectOuterPage">
-		<div id="account" class="imgCircle" ng-class="{'isLoggedIn': isLoggedIn}">
-			<!-- ngIf: !isLoggedIn --><a href="#" class="menu titleDisplay ng-scope" ng-if="!isLoggedIn" ng-click="goToLogin()">
-				<img class="btnLogin" src="app/assets/img/avatar.png">
-				Đăng Nhập
-			</a><!-- end ngIf: !isLoggedIn -->
-			<!-- ngIf: isLoggedIn -->
-			<!-- ngIf: user.user_id -->
-		</div>
-	</div><!-- end ngIf: !isRedirectOuterPage -->
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [ngClass]="{ class: true }"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list> -->
+      <!-- <a mat-list-item href="#">Link 1</a>
+        <a mat-list-item href="#">Link 2</a>
+        <a mat-list-item href="#">Link 3</a> -->
+    <!-- </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container> -->
+<mat-sidenav-container class="sidenav-container">
+    <mat-horizontal-stepper linear>
+        <mat-step label="Step A" completed="false">
+          <p>Step A</p>
+        </mat-step>
+        <mat-step label="Step B" completed="false">
+          <p>Step B</p>
+        </mat-step>
+        <mat-step label="Step C" completed="false">
+          <p>Step C</p>
+        </mat-step>
+      </mat-horizontal-stepper>
+</mat-sidenav-container>
+<ng-container *ngIf="movieInfo">
+  {{movieInfo.tenPhim}}
+</ng-container>
 
-	<!-- reponsive	mobile -->
-	<!-- ngIf: (step==1 && !loadingticket) || (step>1 && !loadingticket && (!loadingseat || pCinemaId==1)) || (step==4 && !waitingCheckout) --><div class="leftmobile ng-scope" ng-if="(step==1 &amp;&amp; !loadingticket) || (step>1 &amp;&amp; !loadingticket &amp;&amp; (!loadingseat || pCinemaId==1)) || (step==4 &amp;&amp; !waitingCheckout)">
-		<div>
-			<!-- ngIf: !isRedirectOuterPage --><img class="backMobile ng-scope" src="app/assets/img/icons/cancel-arrow.png" ng-click="prePage()" ng-if="!isRedirectOuterPage"><!-- end ngIf: !isRedirectOuterPage -->
-			<!-- ngIf: pCinemaId==4 && isRedirectOuterPage -->
-		</div>
-	</div><!-- end ngIf: (step==1 && !loadingticket) || (step>1 && !loadingticket && (!loadingseat || pCinemaId==1)) || (step==4 && !waitingCheckout) -->
-	<div class="centermobile ng-scope">
-		<!-- ngIf: step==1 --><span ng-if="step==1" class="steptitle ng-binding ng-scope">01. CHỌN LOẠI VÉ</span><!-- end ngIf: step==1 -->
-		<!-- ngIf: step==2 -->
-		<!-- ngIf: step==3 -->
-		<!-- ngIf: step==4 -->
-	</div>
-	<!-- ngIf: !isRedirectOuterPage --><div class="rightmobile menudropdown ng-scope" ng-if="!isRedirectOuterPage">
-		<div id="account" class="imgCircle" ng-class="{isLoggedIn: user.user_id}" ng-click="ShowMenu()">
-			<!-- ngIf: !user.user_id --><img ng-if="!user.user_id" ng-click="goToLogin()" src="app/assets/img/avatar.png" class="ng-scope"><!-- end ngIf: !user.user_id -->
-			<!-- ngIf: user.user_id -->
-			<!-- ngIf: user.user_id && !justLoginIn -->
-		</div>
-	</div><!-- end ngIf: !isRedirectOuterPage -->	
-</div>
-<div
-  id="ticketcheckout"
-  ng-if="step==1 || (pCinemaId==1 &amp;&amp; !isMobile &amp;&amp; step < 4)"
-  ng-controller="CheckoutTicketController"
-  ng-include=""
-  src="'app/checkout/ticket/ticket.html'"
-  style=""
-  class="ng-scope"
->
-  <div class="row ng-scope" id="ticket">
-    <!-- ngIf: pCinemaId!=1 -->
-    <div class="leftmobile ng-scope" ng-if="pCinemaId!=1">
-      <div
-        class="styleBlur"
-        style="background-image: url('https://s3img.vcdn.vn/123phim/2019/07/chuyen-kinh-di-luc-nua-dem-scary-stories-to-tell-in-the-dark-15640299094164.jpg')"
-      >
-        <div class="styleGradient"></div>
-      </div>
-    </div>
-    <!-- end ngIf: pCinemaId!=1 -->
-    <!-- ngIf: pCinemaId!=1 -->
-    <div class="titlefilm ng-scope" ng-if="pCinemaId!=1">
-      <p class="info2 ng-binding" style="">
-        <!-- ngIf: film_age >= 13 --><span
-          class="ageType ng-binding ng-scope"
-          ng-if="film_age >= 13"
-          >C18</span
-        >
-        <!-- end ngIf: film_age >= 13 -->Chuyện Kinh Dị Lúc Nửa Đêm - Scary
-        Stories To Tell In The Dark
-      </p>
-      <p class="info3 ng-binding">104 phút - 123Phim 6.6 IMDb - 2D/Digital</p>
-    </div>
-    <!-- end ngIf: pCinemaId!=1 -->
-    <div class="topContent row ">
-      <div class="logocinema" style="">
-        <img
-          class="logo"
-          ng-src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png"
-          src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png"
-        />
-      </div>
-      <!-- ngIf: pCinemaId!=1 -->
-      <div class="contentcinema ng-scope" ng-if="pCinemaId!=1">
-        <p class="address">
-          <span class="pcinema ng-binding" style="color:#8bc541">BHD Star</span
-          ><span class="cinemaname ng-binding" style=""> - Bitexco</span>
-        </p>
-        <p class="hour ng-binding">
-          Ngày mai - 17:00
-          <!-- ngIf: room_name!='' --><span
-            ng-if="room_name!=''"
-            class="ng-binding ng-scope"
-          >
-            - RẠP 3</span
-          >
-          <!-- end ngIf: room_name!='' -->
-        </p>
-      </div>
-      <!-- end ngIf: pCinemaId!=1 -->
-      <!-- ngIf: pCinemaId==1 -->
-    </div>
-    <div class="ticketType">
-      <!-- ngRepeat: ticket in ticketTypes -->
-      <div
-        ng-repeat="ticket in ticketTypes"
-        ng-init="$last &amp;&amp; !isMobile &amp;&amp; fixHeightTicketType()"
-        class="wrapper-ticket-type ng-scope"
-      >
-        <div class="row ticket">
-          <div class="col-sm-4 col-xs-7 typeticket ng-binding" style="">
-            Vé VIP 2D
-            <div class="priceticketmobile ng-binding">60.000 đ</div>
-            <!-- ngIf: ticket.type_descdetail -->
-          </div>
-          <div class="col-sm-4 priceticket ng-binding">60.000 đ</div>
-          <div class="col-sm-4 col-xs-5 opnum">
-            <!-- ngIf: ticket.type_num>0 --><button
-              class="minus ng-scope"
-              ng-if="ticket.type_num>0"
-              style="color: #FB4226 !important;"
-              ng-click="minusTicket(ticket)"
-            >
-              -
-            </button>
-            <!-- end ngIf: ticket.type_num>0 -->
-            <!-- ngIf: ticket.type_num==0 -->
-            <span class="number ng-binding" style="">2</span>
-            <!-- ngIf: ticket.type_num<10 && totalticket<10 --><button
-              class="add ng-scope"
-              ng-if="ticket.type_num<10 &amp;&amp; totalticket<10"
-              style="color: #FB4226 !important;"
-              ng-click="addTicket(ticket)"
-            >
-              +</button
-            ><!-- end ngIf: ticket.type_num<10 && totalticket<10 -->
-            <!-- ngIf: ticket.type_num==10 || totalticket==10 -->
-          </div>
-        </div>
-      </div>
-      <!-- end ngRepeat: ticket in ticketTypes -->
-      <div
-        ng-repeat="ticket in ticketTypes"
-        ng-init="$last &amp;&amp; !isMobile &amp;&amp; fixHeightTicketType()"
-        class="wrapper-ticket-type ng-scope"
-      >
-        <div class="row ticket">
-          <div class="col-sm-4 col-xs-7 typeticket ng-binding" style="">
-            Vé thường 2D
-            <div class="priceticketmobile ng-binding">60.000 đ</div>
-            <!-- ngIf: ticket.type_descdetail -->
-          </div>
-          <div class="col-sm-4 priceticket ng-binding">60.000 đ</div>
-          <div class="col-sm-4 col-xs-5 opnum">
-            <!-- ngIf: ticket.type_num>0 -->
-            <!-- ngIf: ticket.type_num==0 --><button
-              class="minus ng-scope"
-              ng-if="ticket.type_num==0"
-              style="color: #9b9b9b !important;cursor: initial;"
-            >
-              -</button
-            ><!-- end ngIf: ticket.type_num==0 -->
-            <span class="number ng-binding" style="">0</span>
-            <!-- ngIf: ticket.type_num<10 && totalticket<10 --><button
-              class="add ng-scope"
-              ng-if="ticket.type_num<10 &amp;&amp; totalticket<10"
-              style="color: #FB4226 !important;"
-              ng-click="addTicket(ticket)"
-            >
-              +</button
-            ><!-- end ngIf: ticket.type_num<10 && totalticket<10 -->
-            <!-- ngIf: ticket.type_num==10 || totalticket==10 -->
-          </div>
-        </div>
-      </div>
-      <!-- end ngRepeat: ticket in ticketTypes -->
-      <div
-        ng-repeat="ticket in ticketTypes"
-        ng-init="$last &amp;&amp; !isMobile &amp;&amp; fixHeightTicketType()"
-        class="wrapper-ticket-type ng-scope"
-      >
-        <div class="row ticket">
-          <div class="col-sm-4 col-xs-7 typeticket ng-binding" style="">
-            Ghế đôi 2D
-            <div class="priceticketmobile ng-binding">120.000 đ</div>
-            <!-- ngIf: ticket.type_descdetail -->
-          </div>
-          <div class="col-sm-4 priceticket ng-binding">120.000 đ</div>
-          <div class="col-sm-4 col-xs-5 opnum">
-            <!-- ngIf: ticket.type_num>0 -->
-            <!-- ngIf: ticket.type_num==0 --><button
-              class="minus ng-scope"
-              ng-if="ticket.type_num==0"
-              style="color: #9b9b9b !important;cursor: initial;"
-            >
-              -</button
-            ><!-- end ngIf: ticket.type_num==0 -->
-            <span class="number ng-binding" style="">0</span>
-            <!-- ngIf: ticket.type_num<10 && totalticket<10 --><button
-              class="add ng-scope"
-              ng-if="ticket.type_num<10 &amp;&amp; totalticket<10"
-              style="color: #FB4226 !important;"
-              ng-click="addTicket(ticket)"
-            >
-              +</button
-            ><!-- end ngIf: ticket.type_num<10 && totalticket<10 -->
-            <!-- ngIf: ticket.type_num==10 || totalticket==10 -->
-          </div>
-        </div>
-      </div>
-      <!-- end ngRepeat: ticket in ticketTypes -->
-    </div>
-    <!-- ngIf: errorGetTicket.length > 0 -->
-    <div class="detailticket">
-      <!-- ngIf: step==1 -->
-      <div class="chosenTicket row ng-scope" ng-if="step==1" style="">
-        <div class="chosencontent" style="">
-          <div class="totalcostfull">
-            <div class="title">TỔNG TIỀN</div>
-            <div class="chosenpriceticket ng-binding" id="totalcost">
-              120.000 đ
-            </div>
-          </div>
-        </div>
-        <div
-          class="chosenbutton"
-          ng-class="{'disabled': totalticket === 0}"
-          ng-click="choseSeat()"
-        >
-          <!-- ngIf: !loadingticket --><span
-            class="continue ng-binding ng-scope"
-            ng-if="!loadingticket"
-            >CHỌN GHẾ</span
-          >
-          <!-- end ngIf: !loadingticket -->
-          <!-- ngIf: loadingticket -->
-        </div>
-      </div>
-      <!-- end ngIf: step==1 -->
-
-      <div class="contact">
-        <div class="note ng-binding">
-          Xin lưu ý, bạn không thể hủy hoặc thay đổi suất chiếu cho vé đã mua.
-        </div>
-        <div class="hot">
-          <div class="hotline">
-            <p class="hotlinetitle">HOTLINE</p>
-            <p class="costcall">Phí cuộc gọi 1000VND/phút</p>
-          </div>
-          <div class="phone" style="">1900 545 436</div>
-        </div>
-      </div>
-      <div></div>
-      <div class="continuebuttonmobile row">
-        <div class="total col-xs-6">
-          <div class="totalnumber totalright ng-binding" id="totalcostmobile">
-            120
-            <div class="totalleft">
-              <p class="sub" id="detailsub">000</p>
-              <p class="unit" id="detailunit">VND</p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="continuebutton col-xs-6"
-          ng-class="{'disabled': totalticket === 0}"
-          ng-click="choseSeat()"
-        >
-          <!-- ngIf: !loadingticket -->
-          <div ng-if="!loadingticket" class="title ng-scope">TIẾP TỤC</div>
-          <!-- end ngIf: !loadingticket -->
-          <!-- ngIf: loadingticket -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

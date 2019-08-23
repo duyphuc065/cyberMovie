@@ -75,10 +75,10 @@
           <div class="dropdown">
             <div class="dropdownList dropdown-toggle" id="dropdownTool1" data-toggle="dropdown" aria-haspopup="true" (click)="getMoviesCollections()" aria-expanded="!isCollapsed">
               {{ defaultName.movieName }}
-              <ng-container *ngIf="MOVIECOLLECTIONS.length != 0; else defaultMovieTemplate">
+              <ng-container *ngIf="MOVIECOLLECTIONS.length">
                 <ul class="dropdown-menu " aria-labelledby="dropdownTool1">
                   <li *ngFor="let item of MOVIECOLLECTIONS; let stt = index" class="scrollbar" id="style-3">
-                    <a class="dropdown-item" (click)="chooseMovie(item)">{{ item.tenPhim }}
+                    <a class="dropdown-item" (click)="chooseMovie(item)" #movieItem>{{ item.tenPhim }}
                     </a>
                   </li>
                 </ul>

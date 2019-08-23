@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "src/app/commons/share/services/data.service";
 import { UserService } from 'src/app/commons/share/services/user.service';
-import { MESSAGE } from 'src/app/commons/message/Message';
+import { MESSAGE } from 'src/app/commons/message/Constants';
 
 @Component({
   selector: "app-dang-nhap",
@@ -11,7 +11,6 @@ import { MESSAGE } from 'src/app/commons/message/Message';
 export class DangNhapComponent implements OnInit {
   constructor(
     private dataService: DataService,
-    private userService:UserService,
     ) {}
 
   ngOnInit() {}

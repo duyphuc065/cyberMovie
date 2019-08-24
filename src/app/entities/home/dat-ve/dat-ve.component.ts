@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/commons/share/services/data.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 declare var $:any;
 @Component({
   selector: 'app-dat-ve',
@@ -9,7 +10,9 @@ declare var $:any;
   styleUrls: ['./dat-ve.component.scss']
 })
 export class DatVeComponent implements OnInit {
-
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
   maLichChieu:any;
   lichChieu:any=[]; 
   listPhim:any;
@@ -30,12 +33,19 @@ export class DatVeComponent implements OnInit {
     private dataService:DataService,
     private activatedRoute:ActivatedRoute,
     private router:Router,
+    private _formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {
     this.getParamsFromURL();
     this.getShowTimes();
     this.getListPhim();
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
   onFinished(){
     alert("Hết thời gian giữ ghế vui lòng đặt vé lại");

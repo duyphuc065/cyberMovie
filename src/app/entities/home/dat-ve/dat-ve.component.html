@@ -1,81 +1,180 @@
 <section class="booking">
-    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
-                <div class="seatTitle">
+          <div class="col-md-8">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+              <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                  <ng-template matStepLabel>CHỌN VÉ / COMBO</ng-template>
+                  <div class="seatTitle">
                     <div class="seatLeft">
-                        <div class="seatLogo">
-                            <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="seatContent">
-                            <p class="name">{{lichChieu.tenCumRap}}</p>
-                            <p>{{lichChieu.tenRap}}</p>
-                        </div>
+                      <div class="seatLogo">
+                        <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
+                      </div>
+                      <div class="seatContent">
+                        <p class="name">CineStar - 3/2</p>
+                        <p>Hôm nay - 23:30 - Rạp 7</p>
+                      </div>
                     </div>
-                    <div class="seatRight">
-                        <p>Thời gian giữ ghế</p>
-                        <p class="date" id="time">
-                            <countdown [config]="{leftTime: 300}" (finished)="onFinished()">$!m!:$!s!</countdown>
-                        </p>
-                    </div>
-                </div>
-                <div class="seatScreen">
-                </div>
-                <app-danh-sach-ghe (gheChonEvent)="gheChon($event)"></app-danh-sach-ghe>
-                <div class="seatType text-center">
-                    <div class="seatNote">
-                        <div class="seatColor available"><i class="fa fa-couch"></i></div>
-                        <div class="seatName ">Ghế trống</div>
-                    </div>
-                    <div class="seatNote">
-                        <div class="seatColor selected"><i class="fa fa-couch"></i></div>
-                        <div class="seatName ">Ghế đang chọn</div>
-                    </div>
-                    <div class="seatNote">
-                        <div class="seatColor sold"><i class="fa fa-couch"></i></div>
-                        <div class="seatName ">Ghế đã đặt</div>
-                    </div>
-                </div>
-            </div>
-            <ng-container *ngIf="listPhim">
-                <div class="col-md-4">
-                    <div class="ticketRight">
-                        <div class="ticketTop">
-                            <div class="ticketImage">
-                                <img [src]="listPhim.hinhAnh" class="img-fluid" alt="ticket">
+                  </div>
+                  <div class="seatTicket">
+                    <table class="table table_ticket">
+                      <thead class="thead-light">
+                        <tr>
+                          <th width="25%">Chọn vé</th>
+                          <th width="25%">Số lượng</th>
+                          <th width="25%">Giá (VNĐ)</th>
+                          <th width="25%">Tổng (VNĐ)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Vé</th>
+                          <td>
+                            <div class="input-group input-number-group">
+                              <div class="input-group-button">
+                                <span class="input-number-decrement">-</span>
+                              </div>
+                              <input class="input-number" type="number" value="1" min="0" max="1000">
+                              <div class="input-group-button">
+                                <span class="input-number-increment">+</span>
+                              </div>
                             </div>
-                            <div class="ticketTitle">
-                                <p class="nameMovie">{{listPhim.tenPhim}}</p>
-                                <p>{{lichChieu.tenCumRap}}</p>
-                                <p>{{lichChieu.tenRap}}</p>
+                          </td>
+                          <td>84.000</td>
+                          <td>84.000</td>
+                        </tr>
+      
+                      </tbody>
+                    </table>
+                    <table class="table table_combo ">
+                      <thead class="thead-light">
+                        <tr>
+                          <th width="25%">Chọn Combo</th>
+                          <th width="25%">Số lượng</th>
+                          <th width="25%">Giá (VNĐ)</th>
+                          <th width="25%">Tổng (VNĐ)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <p class="nameCombo">Combo 1</p>
+                            <p>(1 bắp + 2 nước)</p>
+                          </th>
+                          <td>
+                            <div class="input-group input-number-group">
+                              <div class="input-group-button">
+                                <span class="input-number-decrement">-</span>
+                              </div>
+                              <input class="input-number" type="number" value="1" min="0" max="1000">
+                              <div class="input-group-button">
+                                <span class="input-number-increment">+</span>
+                              </div>
                             </div>
-                        </div>
-                        <div class="ticketCenter">
-                            <p class="ticketChair">Ghế: <span *ngFor="let item of gheDangChon; let index=index"
-                                    class="ticketSeat">{{item.SoGhe}}</span></p>
-                            <p class="ticketPrice">{{gia | number:'1.0'}}đ</p>
-                        </div>
-                        <div class="ticketCombo">
-                            <div class="ticketSelect">
-                                <mat-form-field>
-                                    <mat-label>COMBO</mat-label>
-                                    <mat-select (selectionChange)="selectCombo($event.value)">
-                                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                                            {{food.viewValue}}
-                                        </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
+                          </td>
+                          <td>84.000</td>
+                          <td>84.000</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <p class="nameCombo">Combo 2</p>
+                            <p>(2 bắp + 4 nước)</p>
+                          </th>
+                          <td>
+                            <div class="input-group input-number-group">
+                              <div class="input-group-button">
+                                <span class="input-number-decrement">-</span>
+                              </div>
+                              <input class="input-number" type="number" value="1" min="0" max="1000">
+                              <div class="input-group-button">
+                                <span class="input-number-increment">+</span>
+                              </div>
                             </div>
-                            <div class="ticketPrice">{{combo |number:'1.0'}}đ</div>
-                        </div>
-                        <div class="ticketBot">
-                            <p class="total">{{total | number:'1.0'}}đ</p>
-                            <button class="btn btn-book" (click)="datVe()">ĐẶT VÉ</button>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
+                          </td>
+                          <td>84.000</td>
+                          <td>84.000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+      
+                  </div>
+                  <button mat-button matStepperNext mat-fab >Next</button>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel>CHỌN GHẾ</ng-template>
+                  <div class="seatTitle">
+                      <div class="seatLeft">
+                          <div class="seatLogo">
+                              <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
+                          </div>
+                          <div class="seatContent">
+                              <p class="name">{{lichChieu.tenCumRap}}</p>
+                              <p>{{lichChieu.tenRap}}</p>
+                          </div>
+                      </div>
+                      <div class="seatRight">
+                          <p>Thời gian giữ ghế</p>
+                          <p class="date" id="time">
+                              <countdown [config]="{leftTime: 300}" (finished)="onFinished()">$!m!:$!s!</countdown>
+                          </p>
+                      </div>
+                  </div>
+                  <div class="seatScreen">
+                  </div>
+                  <app-danh-sach-ghe (gheChonEvent)="gheChon($event)"></app-danh-sach-ghe>
+                  <div class="seatType text-center">
+                      <div class="seatNote">
+                          <div class="seatColor available"><i class="fa fa-couch"></i></div>
+                          <div class="seatName ">Ghế trống</div>
+                      </div>
+                      <div class="seatNote">
+                          <div class="seatColor selected"><i class="fa fa-couch"></i></div>
+                          <div class="seatName ">Ghế đang chọn</div>
+                      </div>
+                      <div class="seatNote">
+                          <div class="seatColor sold"><i class="fa fa-couch"></i></div>
+                          <div class="seatName ">Ghế đã đặt</div>
+                      </div>
+                  </div>
+                  <div>      
+                    <button mat-button matStepperPrevious mat-fab>Back</button>
+                  </div>
+                </form>
+              </mat-step>      
+            </mat-horizontal-stepper>
+          </div>
+          <ng-container *ngIf="listPhim">
+              <div class="col-md-4">
+                  <div class="ticketRight">
+                      <div class="ticketTop">
+                          <div class="ticketImage">
+                              <img [src]="listPhim.hinhAnh" class="img-fluid" alt="ticket">
+                          </div>
+                          <div class="ticketTitle">
+                              <p class="nameMovie">{{listPhim.tenPhim}}</p>
+                              <p>{{lichChieu.tenCumRap}}</p>
+                              <p>{{lichChieu.tenRap}}</p>
+                          </div>
+                      </div>
+                      <div class="ticketCenter">
+                          <p class="ticketChair">Ghế: <span *ngFor="let item of gheDangChon; let index=index"
+                                  class="ticketSeat">{{item.SoGhe}}</span></p>
+                          <!-- <p class="ticketPrice">{{gia | number:'1.0'}}đ</p> -->
+                      </div>
+                      <div class="ticketCombo">
+                          <div class="ticketSelect">
+                             <p class="font-weight-bold">Combo:</p>  <span>Combo 1(2), Combo 2(1)</span>
+                          </div>
+                          <!-- <div class="ticketPrice">{{combo |number:'1.0'}}đ</div> -->
+                      </div>
+                      <div class="ticketBot">
+                          <p class="total">{{total | number:'1.0'}}đ</p>
+                          <button class="btn btn-book" (click)="datVe()">ĐẶT VÉ</button>
+                      </div>
+                  </div>
+              </div>
+          </ng-container>
         </div>
-
-    </div>
-</section>
+      </section>

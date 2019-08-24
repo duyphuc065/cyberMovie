@@ -3,6 +3,7 @@
   .seatTitle {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
     .seatLeft {
       display: flex;
       align-items: center;
@@ -48,8 +49,8 @@
       i {
         font-size: 30px;
       }
-      &:focus{
-        outline:none;
+      &:focus {
+        outline: none;
         box-shadow: none;
       }
     }
@@ -57,20 +58,20 @@
   .seatType {
     display: flex;
     justify-content: center;
-    padding-bottom:50px;
+    padding-bottom: 50px;
     .seatNote {
       margin: 0 20px;
       display: flex;
       .seatColor {
         margin: 0 10px;
-        &.available{
-          color:$color-black-3;
+        &.available {
+          color: $color-black-3;
         }
-        &.selected{
-          color:green;
+        &.selected {
+          color: green;
         }
-        &.sold{
-          color:red;
+        &.sold {
+          color: red;
         }
         i {
           font-size: 20px;
@@ -79,72 +80,134 @@
     }
   }
   .ticketRight {
-    box-shadow: 0 0 15px rgba(0,0,0,.3);
-    padding:20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-top: 22px;
+  
     .ticketTop {
       display: flex;
-      align-items: center;      
+      align-items: center;
       .ticketImage {
         width: 110px;
-        margin-right:20px;
+        margin-right: 20px;
       }
-      .ticketTitle{
-        .nameMovie{
+      .ticketTitle {
+        .nameMovie {
           font-size: 16px;
           font-weight: 500;
         }
       }
     }
-    .ticketCenter{
-      margin:20px 0;
-      padding:20px 0;
+    .ticketCenter {
+      margin: 20px 0;
+      padding: 20px 0;
       border-bottom: 1px dashed #e9e9e9;
       border-top: 1px dashed #e9e9e9;
       display: flex;
       justify-content: space-between;
-      p{
-        margin:0;
+      p {
+        margin: 0;
       }
-      .ticketChair{       
-        .ticketSeat{
-          margin:0 5px;
-          color:$color-red-0;
-        }        
+      .ticketChair {
+        .ticketSeat {
+          margin: 0 5px;
+          color: $color-red-0;
+        }
       }
-      .ticketPrice{
-        color:green;
+      .ticketPrice {
+        color: green;
         font-weight: 500;
-        font-size:16px;
+        font-size: 16px;
       }
     }
-    .ticketCombo{
+    .ticketCombo {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px dashed #e9e9e9;
-      padding-bottom:20px;
-      .ticketSelect{}
-      .ticketPrice{
-        color:green;
+      padding-bottom: 20px;
+      .ticketSelect {
+      }
+      .ticketPrice {
+        color: green;
         font-weight: 500;
-        font-size:16px;
+        font-size: 16px;
       }
     }
-    .ticketBot{
-      padding-top:20px;
-      .btn-book{
-        width:100%;
-        padding:15px;
-        color:white;
+    .ticketBot {
+      padding-top: 20px;
+      .btn-book {
+        width: 100%;
+        padding: 15px;
+        color: white;
         font-weight: 500;
-        background-image: linear-gradient(223deg,#fc8d7c 0,#fb4226 100%);
+        background-image: linear-gradient(223deg, #fc8d7c 0, #fb4226 100%);
       }
-      .total{
-        font-size:40px;
+      .total {
+        font-size: 40px;
         text-align: center;
         font-weight: 500;
+        color: $color-red-0;
+      }
+    }
+  }
+  .mat-step-header:focus {
+    background-color: white;
+  }
+ 
+
+  .input-number-group {
+    display: flex;
+    justify-content: center;
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      appearance: none;
+    }
+
+    .input-group-button {
+      line-height: calc(#{$input-number-size}/ 2 - 3px);
+    }
+
+    .input-number {
+      width: $input-number-size;
+      padding: 0 12px;
+      text-align: center;
+      outline: none;
+      display: block;
+      margin: 0;
+    }
+
+    .input-number
+    {
+      border: 1px solid $color-black-3;
+      height: $input-number-size/2;
+      user-select: none;
+      border-radius: 2px;
+    }
+
+    .input-number-decrement,
+    .input-number-increment {
+      display: inline-block;
+      width: $input-number-size/2;     
+      color: #fc6d57;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: 400;
+      
+      &:hover{
         color:$color-red-0;
       }
+    }
+
+    .input-number-decrement {
+      margin-right: 0.3rem;
+    }
+
+    .input-number-increment {
+      margin-left: 0.3rem;
     }
   }
 }

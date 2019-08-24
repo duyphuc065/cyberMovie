@@ -12,6 +12,7 @@ declare var $: any;
 export class DangNhapComponent implements OnInit {
   @Output() eventUser = new EventEmitter();
   statusLogin:boolean =false;
+  errorLogin: string = '';
   constructor(
     private dataService:DataService
     ) {}
@@ -25,25 +26,22 @@ export class DangNhapComponent implements OnInit {
       taiKhoan : loginForm.taiKhoan,
       matKhau :loginForm.matKhau
     } 
-    this.dataService.post(uri,JSON.stringify(account)).subscribe((data: any) => { 
-      // console.log(data);   
-      if (data === "Tài khoản hoặc mật khẩu không đúng!") {
-        alert(data);
-        // console.log(data);
-      } else {
-        alert("Đăng nhập thành công");
-        console.log(data);
+    this.dataService.post(uri,JSON.stringify(account)).subscribe((data: any) => {  
+        alert("Đăng nhập thành công");        
         this.statusLogin=true;
-        localStorage.setItem("userLogin", JSON.stringify(data));        
+        localStorage.setItem("userLogin", JSON.stringify(data));   
+        this.errorLogin='';     
         $('#modelId').modal('hide');
         const objUser = {
           statusLogin: this.statusLogin,
           user: data,
         };
         this.eventUser.emit(objUser);
-      }
-      
-    });
+      },
+      err =>{
+        this.errorLogin=err;
+        alert("Nhập sai tài khoản/ mật khẩu. Vui lòng nhập lại")
+      });
     
   }
   

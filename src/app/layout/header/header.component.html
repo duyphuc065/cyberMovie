@@ -11,12 +11,21 @@
                     <li><a href="">Tin tức</a></li>
                     <li><a href="">Ứng dụng</a></li>
                 </ul>
-                <div class="col row justify-content-end right m-0">
-                    <div class="login">
-                        <a  data-toggle="modal" data-target="#modelId" ><img src="assets/img/avatar.png" alt="avatar" class="imgLogin">
+                <div class="col row justify-content-end right m-0" >                    
+                    <div class="login" *ngIf="!statusLogin; else LoginSuccess"   >
+                        <a  data-toggle="modal" data-target="#modelId"  ><img src="assets/img/avatar.png" alt="avatar" class="imgLogin">
                             Đăng nhập
                         </a>
                     </div>
+                    
+                    <ng-template #LoginSuccess>
+                        <div class="login" >
+                            <a><img src="assets/img/avatar.png" alt="avatar" class="imgLogin">
+                                Xin chào {{user.taiKhoan}}
+                            </a>
+                            <button class="btn btn-danger" (click)="logOut()">Đăng xuất</button>                            
+                        </div>
+                      </ng-template>
                     <div class="line "></div>
                     <div class="dropdown">
                         <img src="assets/img/icon/location-header.png" class="pr-3" alt="location-header">
@@ -78,7 +87,7 @@
     </div>
 
 </header>
-<app-dang-nhap></app-dang-nhap>
+<app-dang-nhap (eventUser)="getUser($event)"></app-dang-nhap>
 <app-dang-ky></app-dang-ky>
 <!-- <app-modals></app-modals> -->
 <!-- header end -->

@@ -1,7 +1,8 @@
 <div class="card">
-    <a class="card-hover" routerLink="/chi-tiet-phim/{{movie.maPhim}}">
+    <a class="card-hover " [ngClass]="{'show':!showingStatus}" routerLink="/chi-tiet-phim/{{movie.maPhim}}">
         <div class="card-image">
             <img class="card-img-top img-fluid" [src]="movie.hinhAnh" alt="Card image">
+            <div class="card-overlay"></div>
             <div class="card-age">
                 C13
             </div>
@@ -15,20 +16,22 @@
                     <img src="assets/img/icon/star1.2.png" class="star-half" alt="star1.2">
                 </div>
             </div>
-            <div class="card-background"></div>
+     
 
         </div>
-        <div class="card-body">
-            <div class="card-info">
+        <div class="card-body" >
+            <div class="card-info" >
                 <h4 class="card-title">{{movie.tenPhim}}
                 </h4>
                 <p class="card-text">129 phút - {{movie.danhGia}} IMDb</p>
             </div>
         </div>
     </a>
+    <ng-container *ngIf="showingStatus">
     <div class="card-button">
         <button class="btn btn-card" (click)="chiTietPhim()">MUA VÉ</button>
     </div>
+</ng-container>
     <div class="card-video">
         <a href="{{movie.trailer}}" data-lity>
             <div class="card-play text-center">

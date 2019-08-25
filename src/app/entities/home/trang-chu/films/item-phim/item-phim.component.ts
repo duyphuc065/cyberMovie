@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ItemPhimComponent implements OnInit {
   @Input() movie; 
+  @Input() showingStatus;
   constructor(
     private router:Router,
   ) { }

@@ -9,8 +9,8 @@ declare var $:any;
   templateUrl: "./films.component.html",
   styleUrls: ["./films.component.scss"]
 })
-export class FilmsComponent implements OnInit,AfterViewInit {
-
+export class FilmsComponent implements OnInit{
+  showingStatus:boolean=true;
   danhSachPhim: any = [];
   subListPhim = new Subscription();
 
@@ -19,6 +19,12 @@ export class FilmsComponent implements OnInit,AfterViewInit {
   ngOnInit() {  
     this.layDanhSachPhim();
   } 
+  changeShowing(){
+    this.showingStatus=true;
+  }
+  changeComing(){
+    this.showingStatus=false;
+  }
   layDanhSachPhim() {
     const uri = "QuanLyPhim/LayDanhSachPhim?MaNhom=GP01";
     this.subListPhim = this.dataService.get(uri).subscribe((data: any) => {
@@ -30,9 +36,8 @@ export class FilmsComponent implements OnInit,AfterViewInit {
     this.subListPhim.unsubscribe();
   }
   slideConfig = {
-    "slidesPerRow": 4,
-    "rows": 2,
-    "slickSetOption": true,
+    "slidesToShow": 4,
+    "slidesToScroll": 4,
     "nextArrow":
       '<img class="right-arrow" src="assets/img/icon/next-session.png">',
       "prevArrow":
@@ -43,8 +48,8 @@ export class FilmsComponent implements OnInit,AfterViewInit {
       {
         "breakpoint": 1024,
         "settings": {
-          "slidesPerRow": 3,
-          "rows": 2,
+          "slidesToShow": 3,
+          "slidesToScroll": 3,
           "infinite": true,
          
         }
@@ -52,18 +57,19 @@ export class FilmsComponent implements OnInit,AfterViewInit {
       {
         "breakpoint": 600,
         "settings": {
-          "slidesPerRow": 2,
-          "rows": 2,
-          "infinite": true,
-          "arrows": false,
-          "dot": false
+          "slidesToShow": 2,
+          "slidesToScroll": 2
+        }
+      },
+      {
+        "breakpoint": 480,
+        "settings": {
+          "slidesToShow": 1,
+          "slidesToScroll": 1
         }
       }
-    ],        
-  };  
-  ngAfterViewInit() {
-    $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-     $(".slick-soon").slick("setPosition");
-   });
- }
+    ],            
+  };    
+  
+ 
 }

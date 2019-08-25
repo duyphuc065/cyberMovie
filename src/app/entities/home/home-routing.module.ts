@@ -8,12 +8,16 @@ const routes: Routes = [
       component:HomeComponent,
       children:[
         {
-          path:"trang-chu",
-          loadChildren:"./trang-chu/trang-chu.module#TrangChuModule"
+          path:'trang-chu',
+          loadChildren:'./trang-chu/trang-chu.module#TrangChuModule'
         },
         {
-          path:"dat-ve",
-          loadChildren:"./dat-ve/dat-ve.module#DatVeModule"
+          path:'test',
+          loadChildren: './test/test.module#TestModule'
+        },
+        {
+          path:'dat-ve/:id',
+          loadChildren:'./dat-ve/dat-ve.module#DatVeModule'
         }        
       ]
   },  

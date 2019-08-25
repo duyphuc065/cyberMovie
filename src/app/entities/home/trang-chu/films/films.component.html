@@ -3,32 +3,35 @@
     <div class="container">
         <ul class="nav films__nav">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#now">Đang chiếu</a>
+                <a class="nav-link" [ngClass]="{'active':showingStatus}" (click)="changeShowing()">Đang chiếu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#coming">Sắp chiếu</a>
+                <a class="nav-link"  [ngClass]="{'active':!showingStatus}"  (click)="changeComing()">Sắp chiếu</a>
             </li>
         </ul>
 
         <!-- Tab panes -->
+        <ng-container *ngIf="danhSachPhim">
         <div class="tab-content">
-            <div class="tab-pane container active" id="now">
+            <div class="tab-pane container active" id="now" *ngIf="showingStatus;else comingMovie">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
                     <div ngxSlickItem class="sliders slick-film" *ngFor="let item of danhSachPhim">
-                        <app-item-phim [movie]="item"></app-item-phim>
+                        <app-item-phim [movie]="item" [showingStatus]="showingStatus" ></app-item-phim>
                     </div>
                 </ngx-slick-carousel>
 
             </div>
-            <div class="tab-pane container fade" id="coming">
+            <ng-template #comingMovie>
+            <div class="tab-pane container active" id="coming">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
                     <div ngxSlickItem class="sliders slick-soon"  *ngFor="let item of danhSachPhim">
                         <app-item-phim [movie]="item"></app-item-phim>
                     </div>
                 </ngx-slick-carousel>
             </div>
-
+        </ng-template>
         </div>
+    </ng-container>
     </div>
     <!-- Nav tabs -->
 

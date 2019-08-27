@@ -104,15 +104,17 @@
     "@angular-devkit/core" "8.0.6"
     rxjs "6.4.0"
 
-"@angular/animations@github:angular/animations-builds":
-  version "9.0.0-next.3"
-  resolved "https://codeload.github.com/angular/animations-builds/tar.gz/048c5d57f6b4a362bcac2a6d31cda7b56aa0a3d3"
+"@angular/animations@^8.2.3":
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-8.2.3.tgz#1b6e9514bfb0c6ef58fa1ced2493677178f9bbca"
+  integrity sha512-kumEi9s8/cCNkndmETbAN7eSBfPkHGgX1up8ynsRgpjX7PTiGpsKMP0rxJBt281fqQPL/D6G3yZOyC5YfsP5+g==
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cdk@github:angular/cdk-builds":
-  version "8.1.3-ca7fff516"
-  resolved "https://codeload.github.com/angular/cdk-builds/tar.gz/a76ab4da837b392ae3eb5d7c77b9c5cf5e2748e0"
+"@angular/cdk@^8.1.4":
+  version "8.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-8.1.4.tgz#69066053fe4cbd80cee2bb7fa238f1c9abb963fc"
+  integrity sha512-U0tjhAZM4qqUHGGKIKFZZ9d8929s2U/HO0FdoT/eX+oHPOA6mm3bBep7myrSzlkP9V7O1JJfYdhEgijXhYxprQ==
   dependencies:
     tslib "^1.7.1"
   optionalDependencies:
@@ -171,6 +173,13 @@
   integrity sha512-1/vF8D6l1O6IfWiDtaj6nC+B8CtkVtFgXgooDzLBO6XAkaCuJCnhKT1HnpWG5GtVsGaY9MGoTl1vE9ZMDbRQjg==
   dependencies:
     tslib "^1.9.0"
+
+"@angular/core@4.4.6":
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.4.6.tgz#13031fd10dcfe438875419b38f21120958bc2354"
+  integrity sha1-EwMf0Q3P5DiHVBmzjyESCVi8I1Q=
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/core@~8.0.0":
   version "8.0.3"
@@ -343,6 +352,13 @@
     rxjs "6.4.0"
     semver "6.0.0"
     semver-intersect "1.4.0"
+
+"@sweetalert2/ngx-sweetalert2@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/ngx-sweetalert2/-/ngx-sweetalert2-5.1.0.tgz#3e4b259064ca3dcc8cf54edc8cd8bcdf36fb72a4"
+  integrity sha512-2SYaYLkFocAnCpaDLd0b+BZeuFy1Nvkn4ctIVRy08neWiC01zSOoKbi+PT/VXplQEoPyb6EldcJmgaIUhTsCiQ==
+  dependencies:
+    tslib "^1.9.0"
 
 "@types/events@*":
   version "3.0.0"
@@ -4326,6 +4342,20 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+ng-circle-progress@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/ng-circle-progress/-/ng-circle-progress-1.5.0.tgz#b27a34b4dcbbff7ab38640954be0b812df23b0dd"
+  integrity sha512-WRy6UneVz6HIIjvxOY6ogY85RnatGX8P03I0aSWqjUdC6ZYY/Z389QC/JGDjQrWPdO4hIN9td1TgcdGdnc0/Jw==
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-countdown@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-countdown/-/ngx-countdown-3.2.0.tgz#487e2edf21c72ac73e2ebf71108141ea3aa61921"
+  integrity sha512-syyXjGslLaRZ/6/7oSDokHtc/XgBrYxxUDMIxMcu2e/g968u21QbEvo3saiW7TSpRar0htmR84Shg+jUakl8KA==
+  dependencies:
+    tslib "^1.9.0"
+
 ngx-slick-carousel@^0.4.4:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/ngx-slick-carousel/-/ngx-slick-carousel-0.4.5.tgz#1ccad39be9d384219afc18b59605e0ff9adb422e"
@@ -4337,6 +4367,21 @@ ngx-slick@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ngx-slick/-/ngx-slick-0.2.1.tgz#63f2525b953977f7f8780dc8cebea46553642fec"
   integrity sha512-1ynZi91njdTNuc0fkzpIceLWwlu4wyn8IGFZqxqLGup4z3Frl+d4fRgTtZYhSufqp8hSx263I699NloWJgbG0A==
+
+ngx-sweetalert2@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/ngx-sweetalert2/-/ngx-sweetalert2-0.2.7.tgz#d42ad0765043049b7ea027f4ec7f11e6e127a1d5"
+  integrity sha512-86GkhzGYbae5A1TMgDW6uMWkq76NwZRdd5UNjgXGXGSYjcJARI0BnuGfqax84uj0fvJk95BI/jUPlZX7psauYg==
+  dependencies:
+    "@angular/core" "4.4.6"
+    sweetalert2 "^6.11.5"
+
+ngx-toastr@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-toastr/-/ngx-toastr-10.1.0.tgz#df6e578ebac1348e68d24b11d243653a401d17e6"
+  integrity sha512-LXGL8jKIm0SGklkXytNKbR6VrF94all35SaUfgd1gOUzgllTW2ldqORDZlgIaiMB3Dcybaald8p3boEHvfjEIQ==
+  dependencies:
+    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -6247,6 +6292,16 @@ supports-color@^6.1.0:
   integrity sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==
   dependencies:
     has-flag "^3.0.0"
+
+sweetalert2@^6.11.5:
+  version "6.11.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.11.5.tgz#a1ede34089225eb864898f4b613db4fec5dbe334"
+  integrity sha512-8Otu1SlWGS/u3e31cOg+uqrwyoQbByEScKp7UupmCfwEZE9St3coO1e6CXv83YzZtzdDgowdK1hBPKPW7SRp4Q==
+
+sweetalert2@^8.16.3:
+  version "8.16.3"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.16.3.tgz#9b06566b2a203f7ee678a60885f10afccfcc6952"
+  integrity sha512-GfnVLht6OJGUcKnrIILaMbjhn2LvFDIG2MchUviWTa0vJCZoX9cfjWyZsOrOh+g/jRN/+D6V8UXXZJ6rRcN82w==
 
 symbol-observable@1.2.0:
   version "1.2.0"

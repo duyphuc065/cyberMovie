@@ -11,6 +11,7 @@ export default class MovieInfo {
   rapChieu: string;
   ngayXem: string;
   suatChieu: string;
+  giaVe: number;
 
   init(item){
     this.maPhim = item.maPhim;

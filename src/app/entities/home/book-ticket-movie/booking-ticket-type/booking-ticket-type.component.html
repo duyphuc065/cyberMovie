@@ -1,26 +1,9 @@
-<!-- <mat-sidenav-container class="sidenav-container">
-    <mat-horizontal-stepper linear>
-        <mat-step label="Step A" completed="false">
-          <p>Step A</p>
-        </mat-step>
-        <mat-step label="Step B" completed="false">
-          <p>Step B</p>
-        </mat-step>
-        <mat-step label="Step C" completed="false">
-          <p>Step C</p>
-        </mat-step>
-      </mat-horizontal-stepper>
-</mat-sidenav-container>
-<ng-container *ngIf="movieInfo">
-  {{movieInfo.tenPhim}}
-</ng-container> -->
-
 <section class="booking">
   <div class="row">
     <div class="col-md-8">
-      <mat-horizontal-stepper [linear]="isLinear" #stepper>
-        <mat-step [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
+      <mat-horizontal-stepper>
+        <mat-step >
+          <form>
             <ng-template matStepLabel>CHỌN VÉ / COMBO</ng-template>
             <div class="seatTitle">
               <div class="seatLeft">
@@ -28,8 +11,8 @@
                   <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
                 </div>
                 <div class="seatContent">
-                  <p class="name">CineStar - 3/2</p>
-                  <p>Hôm nay - 23:30 - Rạp 7</p>
+                  <p class="name">{{movieInfo.rapChieu}}</p>
+                  <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
                 </div>
               </div>
             </div>
@@ -51,14 +34,14 @@
                         <div class="input-group-button">
                           <span class="input-number-decrement">-</span>
                         </div>
-                        <input class="input-number" type="number" value="1" min="0" max="1000">
+                        <input class="input-number" type="number" value="{{ticketCounter}}" min="0" max="1000">
                         <div class="input-group-button">
-                          <span class="input-number-increment">+</span>
+                          <span class="input-number-increment" (click)="isIncrease()">+</span>
                         </div>
                       </div>
                     </td>
-                    <td>84.000</td>
-                    <td>84.000</td>
+                    <td>{{movieInfo.giaVe}}</td>
+                    <td>{{movieInfo.giaVe * ticketCounter}}</td>
                   </tr>
 
                 </tbody>
@@ -118,8 +101,8 @@
             <button mat-button matStepperNext mat-fab >Next</button>
           </form>
         </mat-step>
-        <mat-step [stepControl]="secondFormGroup">
-          <form [formGroup]="secondFormGroup">
+        <mat-step>
+          <form>
             <ng-template matStepLabel>CHỌN GHẾ</ng-template>
             <div class="seatTitle">
                 <div class="seatLeft">
@@ -127,8 +110,8 @@
                         <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
                     </div>
                     <div class="seatContent">
-                        <p class="name">CineStar - 3/2</p>
-                        <p>Hôm nay - 23:30 - Rạp 7</p>
+                        <p class="name">{{movieInfo.rapChieu}}</p>
+                        <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
                     </div>
                 </div>
                 <div class="seatRight">
@@ -173,13 +156,13 @@
         <div class="ticketTop">
           <div class="ticketImage">
             <img
-              src="https://s3img.vcdn.vn/mobile/123phim/2019/07/dieu-ba-me-khong-ke-romang-c16-15627333506819_220x310.jpg"
+              src="{{movieInfo.hinhAnh}}"
               class="img-fluid" alt="ticket">
           </div>
           <div class="ticketTitle">
-            <p class="nameMovie">Điều Ba Mẹ Không Kể - Romang</p>
-            <p>BHD Star - Vincom 3/2</p>
-            <p>Ngày mai 08/08/2019 - 20:25 - RẠP 1</p>
+            <p class="nameMovie">{{movieInfo.tenPhim}}</p>
+            <p>{{movieInfo.rapChieu}}</p>
+            <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
           </div>
         </div>
         <div class="ticketCenter">
@@ -189,7 +172,7 @@
           <p>Combo: <span>combo 1(2) </span><span>combo 2(1)</span></p>
         </div>
         <div class="ticketBot">
-            <p class="total">50.000đ</p>   
+            <p class="total">{{movieInfo.giaVe * ticketCounter}}</p>   
             <!-- <button class="btn btn-book" (click)="datVe()">ĐẶT VÉ</button>       -->
         </div>
       </div>

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable, Subscription } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import MovieInfo from 'src/app/_core/model/MovieInfo';
+import { Subscription } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 import { ShareDataService } from 'src/app/commons/share/share-data.service';
-
+import { CdkStepper } from '@angular/cdk/stepper';
+import { FareMovie } from "../../../../commons/message/Constants"; 
+import { isBlank } from 'src/app/commons/message/Utils';
 @Component({
   selector: 'app-booking-ticket-type',
   templateUrl: './booking-ticket-type.component.html',
@@ -15,11 +13,15 @@ import { ShareDataService } from 'src/app/commons/share/share-data.service';
 export class BookingTicketTypeComponent implements OnInit {
  
   movieItem: any;
-  firstFormGroup: FormGroup;
+  // firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  formGroup:  FormGroup;
+  isLinear:  CdkStepper;
   isOptional = false;
   subMovieDetail = new Subscription();
-  movieInfo = new MovieInfo();
+  movieInfo:any = undefined;
+  fareMovie:any = FareMovie;
+  ticketCounter:any = 1;
   counterTicket = {
     normalCounter: 0,
     vip2DCounter: 0,
@@ -27,16 +29,25 @@ export class BookingTicketTypeComponent implements OnInit {
   }
   constructor(
     private shareDataService: ShareDataService
+    
     ) {}
     ngOnInit() {
-      this.getMovieInfo();
+        this.getMovieInfo();
+        if(isBlank(this.movieInfo)){
+        this.movieInfo = JSON.parse(localStorage.getItem("movieInfo"));
+        }
+      
       this.counterTicket.normalCounter++;
-      console.log(this.counterTicket);
     }
-
+    
     getMovieInfo(){
       this.shareDataService.shareDetailMovie.subscribe((data: any)=>{
-        this.movieInfo = data;
+        if(!isBlank(data)){
+          this.movieInfo = data;
+        }
       });
+    }
+    isIncrease(){
+      this.ticketCounter+=1;
     }
 }

@@ -16,6 +16,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {MatStepperModule} from '@angular/material/stepper';
 @NgModule({
   declarations: [
     BookingTicketTypeComponent
@@ -37,7 +38,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     MatGridListModule,
     MatExpansionModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatStepperModule
   ]
 })
 export class BookingTicketTypeModule { }

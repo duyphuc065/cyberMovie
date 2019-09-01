@@ -51,22 +51,23 @@ export class BannerComponent implements OnInit {
     const uri = `QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`;
     this.dataService.get(uri).subscribe(response => {
       response.heThongRapChieu.forEach(data => {
-        data.cumRapChieu.forEach(item => {
-          item.lichChieuPhim.forEach(rap => {
+        data.cumRapChieu.forEach(cumrap => {
+          cumrap.lichChieuPhim.forEach(lichchieu => {
+            this.movieInfo.giaVe = lichchieu.giaVe;
             const param = {
               tenHeThongRap: '',
               lichChieu: []
             };
-           const  cinemaName = data.tenHeThongRap + '-' + item.tenCumRap + '-' + rap.tenRap;
+           const  cinemaName = data.tenHeThongRap + '-' + cumrap.tenCumRap + '-' + lichchieu.tenRap;
             const index = this.CINEMACOLLECTIONS.findIndex(element=>{
               return element.tenHeThongRap==cinemaName;
             });
             if(index==-1){
               param.tenHeThongRap = cinemaName;
-              param.lichChieu.push(rap);
+              param.lichChieu.push(lichchieu);
               this.CINEMACOLLECTIONS.push(param);
             }else{
-              this.CINEMACOLLECTIONS[index].lichChieu.push(rap);
+              this.CINEMACOLLECTIONS[index].lichChieu.push(lichchieu);
             }
           });
         });
@@ -80,7 +81,6 @@ export class BannerComponent implements OnInit {
     this.defaultName.ngayXem=NGAYCHIEU_LABEL_DEFAULT;
     this.defaultName.suatChieu=TIME_LABEL_DEFAULT;
     this.getCineMaCollections(item.maPhim);
-    // push data for movieInfo Object
     this.movieInfo.init(item);
     
 
@@ -143,6 +143,7 @@ export class BannerComponent implements OnInit {
     && this.defaultName.suatChieu!=TIME_LABEL_DEFAULT;
   }
   navigateToSeatType(){
+    localStorage.setItem("movieInfo",JSON.stringify(this.movieInfo));
     this.shareDataService.sharingDataMovieDetails(this.movieInfo);
     this.router.navigate(['booking-type']);
 

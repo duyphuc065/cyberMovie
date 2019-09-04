@@ -11,12 +11,16 @@ import { BookingTicketTypeModule } from './booking-ticket-type/booking-ticket-ty
   declarations: [
     BookingSeatsComponent,
     TicketStatusHeaderComponent,
-    BookTicketMovieComponent
+    BookTicketMovieComponent,
   ],
   imports: [
     CommonModule,
     BookTicketMovieRoutingModule,
     BookingTicketTypeModule
+  ],
+  exports:[
+    TicketStatusHeaderComponent,
+    BookingSeatsComponent
   ]
 })
 export class BookTicketMovieModule { }

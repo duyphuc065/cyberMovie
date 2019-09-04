@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class BookingSeatsComponent implements OnInit {
   bookStatus = false;
-  @Input() chair;
+  @Input() seat;
   @Output() isBookOut = new EventEmitter();
   constructor() { }
 
@@ -16,10 +16,11 @@ export class BookingSeatsComponent implements OnInit {
   booking() {
     // this.bookStatus = this.bookStatus === true ? false : true;
     this.bookStatus = !this.bookStatus;
-    let objGhe = {
+    let seatObject = {
       bookStatus: this.bookStatus,
-      chair: this.chair
+      seat: this.seat
     }
-    this.isBookOut.emit(objGhe);
+    this.isBookOut.emit(seatObject);
   }
 }
+

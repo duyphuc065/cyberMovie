@@ -1,181 +1,190 @@
 <section class="booking">
-  <div class="row">
-    <div class="col-md-8">
-      <mat-horizontal-stepper>
-        <mat-step >
-          <form>
-            <ng-template matStepLabel>CHỌN VÉ / COMBO</ng-template>
-            <div class="seatTitle">
-              <div class="seatLeft">
-                <div class="seatLogo">
-                  <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
-                </div>
-                <div class="seatContent">
-                  <p class="name">{{movieInfo.rapChieu}}</p>
-                  <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
+    <div class="row">
+      <div class="col-md-8">
+        <mat-horizontal-stepper>
+          <mat-step >
+            <form>
+              <ng-template matStepLabel>CHỌN VÉ / COMBO</ng-template>
+              <div class="seatTitle">
+                <div class="seatLeft">
+                  <div class="seatLogo">
+                    <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="seatContent">
+                    <p class="name">{{movieInfo.rapChieu}}</p>
+                    <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="seatTicket">
-              <table class="table table_ticket">
-                <thead class="thead-light">
-                  <tr>
-                    <th width="25%">Chọn vé</th>
-                    <th width="25%">Số lượng</th>
-                    <th width="25%">Giá (VNĐ)</th>
-                    <th width="25%">Tổng (VNĐ)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>Vé</th>
-                    <td>
-                      <div class="input-group input-number-group">
-                        <div class="input-group-button">
-                          <span class="input-number-decrement">-</span>
+              <div class="seatTicket">
+                <table class="table table_ticket">
+                  <thead class="thead-light">
+                    <tr>
+                      <th width="25%">Chọn vé</th>
+                      <th width="25%">Số lượng</th>
+                      <th width="25%">Giá (VNĐ)</th>
+                      <th width="25%">Tổng (VNĐ)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Vé</th>
+                      <td>
+                        <div class="input-group input-number-group">
+                          <div class="input-group-button">
+                            <span class="input-number-decrement">-</span>
+                          </div>
+                          <input class="input-number" type="number" value="{{ticketCounter}}" min="0" max="1000">
+                          <div class="input-group-button">
+                            <span class="input-number-increment" (click)="isIncrease()">+</span>
+                          </div>
                         </div>
-                        <input class="input-number" type="number" value="{{ticketCounter}}" min="0" max="1000">
-                        <div class="input-group-button">
-                          <span class="input-number-increment" (click)="isIncrease()">+</span>
+                      </td>
+                      <td>{{movieInfo.giaVe}}</td>
+                      <td>{{movieInfo.giaVe * ticketCounter}}</td>
+                    </tr>
+  
+                  </tbody>
+                </table>
+                <table class="table table_combo ">
+                  <thead class="thead-light">
+                    <tr>
+                      <th width="25%">Chọn Combo</th>
+                      <th width="25%">Số lượng</th>
+                      <th width="25%">Giá (VNĐ)</th>
+                      <th width="25%">Tổng (VNĐ)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>
+                        <p class="nameCombo">Combo 1</p>
+                        <p>(1 bắp + 2 nước)</p>
+                      </th>
+                      <td>
+                        <div class="input-group input-number-group">
+                          <div class="input-group-button">
+                            <span class="input-number-decrement">-</span>
+                          </div>
+                          <input class="input-number" type="number" value="1" min="0" max="1000">
+                          <div class="input-group-button">
+                            <span class="input-number-increment">+</span>
+                          </div>
                         </div>
+                      </td>
+                      <td>84.000</td>
+                      <td>84.000</td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <p class="nameCombo">Combo 2</p>
+                        <p>(2 bắp + 4 nước)</p>
+                      </th>
+                      <td>
+                        <div class="input-group input-number-group">
+                          <div class="input-group-button">
+                            <span class="input-number-decrement">-</span>
+                          </div>
+                          <input class="input-number" type="number" value="1" min="0" max="1000">
+                          <div class="input-group-button">
+                            <span class="input-number-increment">+</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>84.000</td>
+                      <td>84.000</td>
+                    </tr>
+                  </tbody>
+                </table>
+  
+              </div>
+              <button mat-button matStepperNext mat-fab >Next</button>
+            </form>
+          </mat-step>
+          <mat-step>
+            <form>
+              <ng-template matStepLabel>CHỌN GHẾ</ng-template>
+              <div class="seatTitle">
+                  <div class="seatLeft">
+                      <div class="seatLogo">
+                          <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
                       </div>
-                    </td>
-                    <td>{{movieInfo.giaVe}}</td>
-                    <td>{{movieInfo.giaVe * ticketCounter}}</td>
-                  </tr>
-
-                </tbody>
-              </table>
-              <table class="table table_combo ">
-                <thead class="thead-light">
-                  <tr>
-                    <th width="25%">Chọn Combo</th>
-                    <th width="25%">Số lượng</th>
-                    <th width="25%">Giá (VNĐ)</th>
-                    <th width="25%">Tổng (VNĐ)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>
-                      <p class="nameCombo">Combo 1</p>
-                      <p>(1 bắp + 2 nước)</p>
-                    </th>
-                    <td>
-                      <div class="input-group input-number-group">
-                        <div class="input-group-button">
-                          <span class="input-number-decrement">-</span>
-                        </div>
-                        <input class="input-number" type="number" value="1" min="0" max="1000">
-                        <div class="input-group-button">
-                          <span class="input-number-increment">+</span>
-                        </div>
+                      <div class="seatContent">
+                          <p class="name">{{movieInfo.rapChieu}}</p>
+                          <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
                       </div>
-                    </td>
-                    <td>84.000</td>
-                    <td>84.000</td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <p class="nameCombo">Combo 2</p>
-                      <p>(2 bắp + 4 nước)</p>
-                    </th>
-                    <td>
-                      <div class="input-group input-number-group">
-                        <div class="input-group-button">
-                          <span class="input-number-decrement">-</span>
-                        </div>
-                        <input class="input-number" type="number" value="1" min="0" max="1000">
-                        <div class="input-group-button">
-                          <span class="input-number-increment">+</span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>84.000</td>
-                    <td>84.000</td>
-                  </tr>
-                </tbody>
-              </table>
-
+                  </div>
+                  <div class="seatRight">
+                      <p>Thời gian giữ ghế</p>
+                      <p class="date" id="time">6:00</p>
+                  </div>
+              </div>
+              <div class="seatScreen">
+              </div>
+              <div class="seatItem text-center">
+                <ng-container *ngFor="let item of seatsCollections; let i=index">
+                 <app-booking-seats [seat] ="item" (isBookOut) ="seatBooked($event)" ></app-booking-seats>
+                 <br *ngIf="(index+1)%4===0">
+                </ng-container>
+                
+                  <!-- <button class="btn seat"><i class="fa fa-couch"></i> </button>
+                  <button class="btn seat"><i class="fa fa-couch"></i> </button>
+                  <button class="btn seat"><i class="fa fa-couch"></i> </button>
+                  <button class="btn seat"><i class="fa fa-couch"></i> </button>
+                  <button class="btn seat"><i class="fa fa-couch"></i> </button>
+                  <button class="btn seat"><i class="fa fa-couch"></i> </button>
+                  <button class="btn seat"><i class="fa fa-couch"></i> </button> -->
+              </div>
+              <div class="seatType text-center">
+                  <div class="seatNote">
+                      <div class="seatColor"><i class="fa fa-couch"></i></div>
+                      <div class="seatName">Ghế trống</div>
+                  </div>
+                  <div class="seatNote">
+                      <div class="seatColor"><i class="fa fa-couch"></i></div>
+                      <div class="seatName">Ghế trống</div>
+                  </div>
+                  <div class="seatNote">
+                      <div class="seatColor"><i class="fa fa-couch"></i></div>
+                      <div class="seatName">Ghế trống</div>
+                  </div>
+              </div>
+              <div>      
+                <button mat-button matStepperPrevious mat-fab>Back</button>
+              </div>
+            </form>
+          </mat-step>      
+        </mat-horizontal-stepper>
+      </div>
+      <div class="col-md-4">
+        <div class="ticketRight">
+          <div class="ticketTop">
+            <div class="ticketImage">
+              <img
+                src="{{movieInfo.hinhAnh}}"
+                class="img-fluid" alt="ticket">
             </div>
-            <button mat-button matStepperNext mat-fab >Next</button>
-          </form>
-        </mat-step>
-        <mat-step>
-          <form>
-            <ng-template matStepLabel>CHỌN GHẾ</ng-template>
-            <div class="seatTitle">
-                <div class="seatLeft">
-                    <div class="seatLogo">
-                        <img src="assets/img/icon/cinestar.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="seatContent">
-                        <p class="name">{{movieInfo.rapChieu}}</p>
-                        <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
-                    </div>
-                </div>
-                <div class="seatRight">
-                    <p>Thời gian giữ ghế</p>
-                    <p class="date" id="time">6:00</p>
-                </div>
+            <div class="ticketTitle">
+              <p class="nameMovie">{{movieInfo.tenPhim}}</p>
+              <p>{{movieInfo.rapChieu}}</p>
+              <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
             </div>
-            <div class="seatScreen">
-            </div>
-            <div class="seatItem text-center">
-                <button class="btn seat"><i class="fa fa-couch"></i> </button>
-                <button class="btn seat"><i class="fa fa-couch"></i> </button>
-                <button class="btn seat"><i class="fa fa-couch"></i> </button>
-                <button class="btn seat"><i class="fa fa-couch"></i> </button>
-                <button class="btn seat"><i class="fa fa-couch"></i> </button>
-                <button class="btn seat"><i class="fa fa-couch"></i> </button>
-                <button class="btn seat"><i class="fa fa-couch"></i> </button>
-            </div>
-            <div class="seatType text-center">
-                <div class="seatNote">
-                    <div class="seatColor"><i class="fa fa-couch"></i></div>
-                    <div class="seatName">Ghế trống</div>
-                </div>
-                <div class="seatNote">
-                    <div class="seatColor"><i class="fa fa-couch"></i></div>
-                    <div class="seatName">Ghế trống</div>
-                </div>
-                <div class="seatNote">
-                    <div class="seatColor"><i class="fa fa-couch"></i></div>
-                    <div class="seatName">Ghế trống</div>
-                </div>
-            </div>
-            <div>      
-              <button mat-button matStepperPrevious mat-fab>Back</button>
-            </div>
-          </form>
-        </mat-step>      
-      </mat-horizontal-stepper>
-    </div>
-    <div class="col-md-4">
-      <div class="ticketRight">
-        <div class="ticketTop">
-          <div class="ticketImage">
-            <img
-              src="{{movieInfo.hinhAnh}}"
-              class="img-fluid" alt="ticket">
           </div>
-          <div class="ticketTitle">
-            <p class="nameMovie">{{movieInfo.tenPhim}}</p>
-            <p>{{movieInfo.rapChieu}}</p>
-            <p>{{movieInfo.ngayXem}} {{movieInfo.suatChieu}}</p>
+          <div class="ticketCenter">
+            <p class="ticketChair">Ghế: </p>         
+            <ng-container *ngFor="let item of seatsCollections; let i=index">
+              {{item.SoGhe}}
+            </ng-container>
+            
           </div>
-        </div>
-        <div class="ticketCenter">
-          <p class="ticketChair">Ghế: </p>         
-        </div>
-        <div class="ticketCombo">
-          <p>Combo: <span>combo 1(2) </span><span>combo 2(1)</span></p>
-        </div>
-        <div class="ticketBot">
-            <p class="total">{{movieInfo.giaVe * ticketCounter}}</p>   
-            <!-- <button class="btn btn-book" (click)="datVe()">ĐẶT VÉ</button>       -->
+          <div class="ticketCombo">
+            <p>Combo: <span>combo 1(2) </span><span>combo 2(1)</span></p>
+          </div>
+          <div class="ticketBot">
+              <p class="total">{{movieInfo.giaVe * ticketCounter}}</p>   
+              <!-- <button class="btn btn-book" (click)="datVe()">ĐẶT VÉ</button>       -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>

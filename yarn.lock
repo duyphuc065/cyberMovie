@@ -201,7 +201,7 @@
   integrity sha512-04XojOo9FJgEQE/rZafnaJQxPEU+//TSzTgpGoIVzCSMx+joCY/ZSSwJZPWxiHlOE57W/zX02ZY+TwcM81oTdw==
 
 "@angular/material@github:angular/material2-builds":
-  version "8.1.3-ca7fff516"
+  version "8.1.4"
   resolved "https://codeload.github.com/angular/material2-builds/tar.gz/9d0bfb7dd4d82d82dd3ea440cae6efecb46b694f"
   dependencies:
     tslib "^1.7.1"

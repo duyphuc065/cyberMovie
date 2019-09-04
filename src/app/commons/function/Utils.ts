@@ -1,7 +1,8 @@
-import { MESSAGE } from "../message/Constants";
+import * as _ from 'lodash';
+import { MESSAGE } from './Constants';
 
-export module Utils {
-export const isSIGN_UP = (message) => {
+
+export const isSignUp = (message) => {
     switch (message) {
       case MESSAGE.ACCOUNT_ALREADY_EXISTS:
         return false;
@@ -13,4 +14,16 @@ export const isSIGN_UP = (message) => {
         return true;
     }
   }
-}
+
+  export const isBlank = (data:any)=>{
+    if(_.isUndefined(data)){
+      return true;
+    }
+    if(_.isNull(data)){
+      return true;
+    }
+    if(_.isEmpty(data)){
+      return true;
+    }
+    return false;
+  }

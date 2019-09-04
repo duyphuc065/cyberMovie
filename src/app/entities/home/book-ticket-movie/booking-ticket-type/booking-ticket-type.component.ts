@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { ShareDataService } from 'src/app/commons/share/share-data.service';
 import { CdkStepper } from '@angular/cdk/stepper';
-import { FareMovie } from "../../../../commons/message/Constants"; 
-import { isBlank } from 'src/app/commons/message/Utils';
+import { FareMovie, seatCollections } from 'src/app/commons/function/Constants';
+import { isBlank } from 'src/app/commons/function/Utils';
+import { BookingSeatsComponent } from '../booking-seats/booking-seats.component';
 @Component({
   selector: 'app-booking-ticket-type',
   templateUrl: './booking-ticket-type.component.html',
@@ -27,6 +28,9 @@ export class BookingTicketTypeComponent implements OnInit {
     vip2DCounter: 0,
     couple2DCounter: 0
   }
+  seatsBooking: any = [];
+  seatsCollections = seatCollections();
+  @ViewChildren(BookingSeatsComponent) seatItems: QueryList<BookingSeatsComponent>;
   constructor(
     private shareDataService: ShareDataService
     
@@ -49,5 +53,23 @@ export class BookingTicketTypeComponent implements OnInit {
     }
     isIncrease(){
       this.ticketCounter+=1;
+    }
+    seatBooked(value){
+      if(isBlank(value.bookStatus)){
+        this.seatsCollections.push(value.seat);
+      }else{
+        let index = this.seatsCollections.findIndex(item =>{
+          return item.SoGhe == value.seat.SoGhe;
+        });
+        this.seatsCollections.splice(index,1);
+      }
+    }
+    deleteBookSeat(index,item) {
+      this.seatsCollections.splice(index, 1);
+      this.seatItems.map(element => {
+        if (element.seat.SoGhe === item.SoGhe) {
+          element.bookStatus = false;
+        }
+      });
     }
 }

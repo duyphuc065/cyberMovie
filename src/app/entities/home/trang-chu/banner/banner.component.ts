@@ -3,8 +3,8 @@ import {Router, ActivatedRoute} from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/commons/share/services/data.service';
 import { ShareDataService } from 'src/app/commons/share/share-data.service';
-import { MOVIE_LABEL_DEFAULT, CINEMA_LABEL_DEFAULT, NGAYCHIEU_LABEL_DEFAULT, TIME_LABEL_DEFAULT, DISABLE_BUTTON } from 'src/app/commons/message/CommonName';
 import MovieInfo from 'src/app/_core/model/MovieInfo';
+import { MOVIE_LABEL_DEFAULT, CINEMA_LABEL_DEFAULT, NGAYCHIEU_LABEL_DEFAULT, TIME_LABEL_DEFAULT, DISABLE_BUTTON } from 'src/app/commons/function/CommonName';
 
 @Component({
   selector: 'app-banner',

@@ -9,18 +9,13 @@ import { BookingTicketTypeModule } from './booking-ticket-type/booking-ticket-ty
 
 @NgModule({
   declarations: [
-    BookingSeatsComponent,
     TicketStatusHeaderComponent,
     BookTicketMovieComponent,
   ],
   imports: [
     CommonModule,
-    BookTicketMovieRoutingModule,
-    BookingTicketTypeModule
-  ],
-  exports:[
-    TicketStatusHeaderComponent,
-    BookingSeatsComponent
+    BookingTicketTypeModule,
+    BookTicketMovieRoutingModule
   ]
 })
 export class BookTicketMovieModule { }

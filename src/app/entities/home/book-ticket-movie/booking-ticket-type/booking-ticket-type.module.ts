@@ -17,9 +17,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
+import { BookingSeatsComponent } from '../booking-seats/booking-seats.component';
 @NgModule({
   declarations: [
-    BookingTicketTypeComponent
+    BookingTicketTypeComponent,
+    BookingSeatsComponent
   ],
   imports: [
     CommonModule,

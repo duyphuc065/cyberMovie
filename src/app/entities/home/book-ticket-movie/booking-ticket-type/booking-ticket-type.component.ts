@@ -55,17 +55,17 @@ export class BookingTicketTypeComponent implements OnInit {
       this.ticketCounter+=1;
     }
     seatBooked(value){
-      if(isBlank(value.bookStatus)){
-        this.seatsCollections.push(value.seat);
+      if(value.bookStatus){
+        this.seatsBooking.push(value.seat);
       }else{
-        let index = this.seatsCollections.findIndex(item =>{
-          return item.SoGhe == value.seat.SoGhe;
+        let index = this.seatsBooking.findIndex(item =>{
+          return item.SoGhe === value.seat.SoGhe;
         });
-        this.seatsCollections.splice(index,1);
+        this.seatsBooking.splice(index,1);
       }
     }
     deleteBookSeat(index,item) {
-      this.seatsCollections.splice(index, 1);
+      this.seatsBooking.splice(index, 1);
       this.seatItems.map(element => {
         if (element.seat.SoGhe === item.SoGhe) {
           element.bookStatus = false;

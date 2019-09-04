@@ -123,8 +123,10 @@
               </div>
               <div class="seatItem text-center">
                 <ng-container *ngFor="let item of seatsCollections; let i=index">
-                 <app-booking-seats [seat] ="item" (isBookOut) ="seatBooked($event)" ></app-booking-seats>
-                 <br *ngIf="(index+1)%4===0">
+                 <app-booking-seats [seat] ="item" 
+                 (isBookOut) ="seatBooked($event)" >
+                </app-booking-seats>
+                 <br *ngIf="(i+1)%4===0">
                 </ng-container>
                 
                   <!-- <button class="btn seat"><i class="fa fa-couch"></i> </button>
@@ -172,7 +174,7 @@
           </div>
           <div class="ticketCenter">
             <p class="ticketChair">Ghế: </p>         
-            <ng-container *ngFor="let item of seatsCollections; let i=index">
+            <ng-container *ngFor="let item of seatsBooking; let i=index">
               {{item.SoGhe}}
             </ng-container>
             
